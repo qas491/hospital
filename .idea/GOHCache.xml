@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="CancelAppointmentLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/cancelappointmentlogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Department">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listdepartmentslogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Doctor">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listdoctorslogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetAppointmentLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/getappointmentlogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListDepartmentsLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listdepartmentslogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListDoctorsLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listdoctorslogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListTimeSlotsLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listtimeslotslogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MakeAppointmentLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/makeappointmentlogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ServiceContext">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/svc/servicecontext.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="TimeSlot">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listtimeslotslogic.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/patient_srv/internal/logic/cancelappointmentlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752115937489" />
+              <option name="schema">
+                <list>
+                  <option value="CancelAppointmentLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/patient_srv/internal/logic/getappointmentlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752116080448" />
+              <option name="schema">
+                <list>
+                  <option value="GetAppointmentLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/patient_srv/internal/logic/listdepartmentslogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752116756050" />
+              <option name="schema">
+                <list>
+                  <option value="ListDepartmentsLogic" />
+                  <option value="Department" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/patient_srv/internal/logic/listdoctorslogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752116230672" />
+              <option name="schema">
+                <list>
+                  <option value="ListDoctorsLogic" />
+                  <option value="Doctor" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/patient_srv/internal/logic/listtimeslotslogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752116384333" />
+              <option name="schema">
+                <list>
+                  <option value="ListTimeSlotsLogic" />
+                  <option value="TimeSlot" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/patient_srv/internal/logic/makeappointmentlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752116900160" />
+              <option name="schema">
+                <list>
+                  <option value="MakeAppointmentLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/patient_srv/internal/svc/servicecontext.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752117503335" />
+              <option name="schema">
+                <list>
+                  <option value="ServiceContext" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/patient_srv/model/mysql/mysqlInit.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752114810786" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/patient_srv/model/redis/redis.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752114546174" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/patient_srv/patient.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752115123663" />
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="cancel_appointment_logic" value="CancelAppointmentLogic" />
+        <entry key="department" value="Department" />
+        <entry key="doctor" value="Doctor" />
+        <entry key="get_appointment_logic" value="GetAppointmentLogic" />
+        <entry key="list_departments_logic" value="ListDepartmentsLogic" />
+        <entry key="list_doctors_logic" value="ListDoctorsLogic" />
+        <entry key="list_time_slots_logic" value="ListTimeSlotsLogic" />
+        <entry key="make_appointment_logic" value="MakeAppointmentLogic" />
+        <entry key="service_context" value="ServiceContext" />
+        <entry key="time_slot" value="TimeSlot" />
+      </map>
+    </option>
+    <option name="lastTimeChecked" value="1752113825327" />
+  </component>
+</project>

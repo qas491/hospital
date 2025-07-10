@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package patient;
+option go_package="./patient";
+
+// 科室信息
+message Department {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+// 医生信息
+message Doctor {
+  int32 id = 1;
+  string name = 2;
+  int32 department_id = 3;
+  string title = 4;
+  string profile = 5;
+}
+
+// 预约时间段
+message TimeSlot {
+  int32 id = 1;
+  int32 doctor_id = 2;
+  string date = 3; // yyyy-MM-dd
+  string start_time = 4; // HH:mm
+  string end_time = 5;   // HH:mm
+  int32 available = 6;
+}
+
+// 预约信息
+message Appointment {
+  int32 id = 1;
+  int32 patient_id = 2;
+  int32 doctor_id = 3;
+  int32 department_id = 4;
+  int32 timeslot_id = 5;
+  string status = 6; // pending, confirmed, cancelled
+  string created_at = 7;
+}
+
+// 患者信息
+message Patient {
+  int32 id = 1;
+  string name = 2;
+  string gender = 3;
+  string phone = 4;
+  string id_card = 5;
+}
+
+// ========== 请求与响应 ===========
+
+// 科室列表
+message ListDepartmentsRequest {}
+message ListDepartmentsResponse {
+  repeated Department departments = 1;
+}
+
+// 医生列表
+message ListDoctorsRequest {
+  int32 department_id = 1;
+}
+message ListDoctorsResponse {
+  repeated Doctor doctors = 1;
+}
+
+// 时间段列表
+message ListTimeSlotsRequest {
+  int32 doctor_id = 1;
+  string date = 2;
+}
+message ListTimeSlotsResponse {
+  repeated TimeSlot timeslots = 1;
+}
+
+// 预约
+message MakeAppointmentRequest {
+  int32 patient_id = 1;
+  int32 doctor_id = 2;
+  int32 department_id = 3;
+  int32 timeslot_id = 4;
+}
+message MakeAppointmentResponse {
+  Appointment appointment = 1;
+}
+
+// 查询预约
+message GetAppointmentRequest {
+  int32 appointment_id = 1;
+}
+message GetAppointmentResponse {
+  Appointment appointment = 1;
+}
+
+// 取消预约
+message CancelAppointmentRequest {
+  int32 appointment_id = 1;
+}
+message CancelAppointmentResponse {
+  bool success = 1;
+}
+
+// ========== 服务定义 ===========
+service MedicalService {
+  rpc ListDepartments(ListDepartmentsRequest) returns (ListDepartmentsResponse);
+  rpc ListDoctors(ListDoctorsRequest) returns (ListDoctorsResponse);
+  rpc ListTimeSlots(ListTimeSlotsRequest) returns (ListTimeSlotsResponse);
+  rpc MakeAppointment(MakeAppointmentRequest) returns (MakeAppointmentResponse);
+  rpc GetAppointment(GetAppointmentRequest) returns (GetAppointmentResponse);
+  rpc CancelAppointment(CancelAppointmentRequest) returns (CancelAppointmentResponse);
+}
