@@ -3,6 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/qas491/hospital/patient_srv/configs"
+	"github.com/qas491/hospital/patient_srv/model/mysql"
+	"github.com/qas491/hospital/patient_srv/model/redis"
 
 	"github.com/qas491/hospital/patient_srv/internal/config"
 	"github.com/qas491/hospital/patient_srv/internal/server"
@@ -20,7 +23,9 @@ var configFile = flag.String("f", "etc/patient.yaml", "the config file")
 
 func main() {
 	flag.Parse()
-
+	configs.Init()
+	mysql.MysqlInit()
+	redis.ExampleClient()
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
 	ctx := svc.NewServiceContext(c)

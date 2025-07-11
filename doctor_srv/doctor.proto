@@ -1,0 +1,370 @@
+syntax = "proto3";
+
+package doctor;
+option go_package="./doctor";
+
+// 医生服务
+service DoctorService {
+  // 开处方
+  rpc CreatePrescription(CreatePrescriptionReq) returns (CreatePrescriptionResp);
+  
+  // 审核处方
+  rpc ReviewPrescription(ReviewPrescriptionReq) returns (ReviewPrescriptionResp);
+  
+  // 获取处方列表
+  rpc GetPrescriptionList(GetPrescriptionListReq) returns (GetPrescriptionListResp);
+  
+  // 获取处方详情
+  rpc GetPrescriptionDetail(GetPrescriptionDetailReq) returns (GetPrescriptionDetailResp);
+  
+  // 选择药品
+  rpc SelectMedicines(SelectMedicinesReq) returns (SelectMedicinesResp);
+  
+  // 获取药品列表
+  rpc GetMedicinesList(GetMedicinesListReq) returns (GetMedicinesListResp);
+  
+  // 获取药品详情
+  rpc GetMedicinesDetail(GetMedicinesDetailReq) returns (GetMedicinesDetailResp);
+  
+  // 创建病例
+  rpc CreateCareHistory(CreateCareHistoryReq) returns (CreateCareHistoryResp);
+  
+  // 获取病例列表
+  rpc GetCareHistoryList(GetCareHistoryListReq) returns (GetCareHistoryListResp);
+  
+  // 获取病例详情
+  rpc GetCareHistoryDetail(GetCareHistoryDetailReq) returns (GetCareHistoryDetailResp);
+  
+  // 获取周排行榜
+  rpc GetWeeklyRanking(GetWeeklyRankingReq) returns (GetWeeklyRankingResp);
+  
+  // 生成周排行榜
+  rpc GenerateWeeklyRanking(GenerateWeeklyRankingReq) returns (GenerateWeeklyRankingResp);
+  
+  // 获取医生业绩
+  rpc GetDoctorPerformance(GetDoctorPerformanceReq) returns (GetDoctorPerformanceResp);
+}
+
+// 创建处方请求
+message CreatePrescriptionReq {
+  string co_id = 1;           // 处方ID
+  string co_type = 2;         // 处方类型
+  int64 user_id = 3;          // 医生ID
+  string patient_id = 4;      // 患者ID
+  string patient_name = 5;    // 患者姓名
+  string ch_id = 6;           // 病例ID
+  double all_amount = 7;      // 总金额
+  string create_by = 8;       // 创建人
+  repeated PrescriptionItem items = 9; // 处方项目列表
+}
+
+// 处方项目
+message PrescriptionItem {
+  string item_id = 1;         // 项目ID
+  string item_ref_id = 2;     // 引用ID
+  string item_name = 3;       // 项目名称
+  string item_type = 4;       // 项目类型
+  double num = 5;             // 数量
+  double price = 6;           // 单价
+  double amount = 7;          // 金额
+  string remark = 8;          // 备注
+  string status = 9;          // 状态
+}
+
+// 创建处方响应
+message CreatePrescriptionResp {
+  int64 code = 1;
+  string message = 2;
+  string co_id = 3;           // 处方ID
+}
+
+// 审核处方请求
+message ReviewPrescriptionReq {
+  string co_id = 1;           // 处方ID
+  string review_status = 2;    // 审核状态
+  string review_by = 3;       // 审核人
+  string review_remark = 4;   // 审核备注
+}
+
+// 审核处方响应
+message ReviewPrescriptionResp {
+  int64 code = 1;
+  string message = 2;
+  bool success = 3;
+}
+
+// 获取处方列表请求
+message GetPrescriptionListReq {
+  int64 page = 1;
+  int64 page_size = 2;
+  string patient_id = 3;      // 患者ID
+  string patient_name = 4;    // 患者姓名
+  int64 user_id = 5;          // 医生ID
+  string co_type = 6;         // 处方类型
+  string status = 7;          // 状态
+  string start_time = 8;      // 开始时间
+  string end_time = 9;        // 结束时间
+}
+
+// 处方信息
+message PrescriptionInfo {
+  string co_id = 1;           // 处方ID
+  string co_type = 2;         // 处方类型
+  int64 user_id = 3;          // 医生ID
+  string patient_id = 4;      // 患者ID
+  string patient_name = 5;    // 患者姓名
+  string ch_id = 6;           // 病例ID
+  double all_amount = 7;      // 总金额
+  string create_by = 8;       // 创建人
+  string create_time = 9;     // 创建时间
+  string update_by = 10;      // 更新人
+  string update_time = 11;    // 更新时间
+  repeated PrescriptionItem items = 12; // 处方项目列表
+}
+
+// 获取处方列表响应
+message GetPrescriptionListResp {
+  int64 code = 1;
+  string message = 2;
+  repeated PrescriptionInfo list = 3;
+  int64 total = 4;
+}
+
+// 获取处方详情请求
+message GetPrescriptionDetailReq {
+  string co_id = 1;           // 处方ID
+}
+
+// 获取处方详情响应
+message GetPrescriptionDetailResp {
+  int64 code = 1;
+  string message = 2;
+  PrescriptionInfo detail = 3;
+  string qrcode = 4; // 新增
+}
+
+// 选择药品请求
+message SelectMedicinesReq {
+  string medicines_id = 1;    // 药品ID
+  string medicines_name = 2;  // 药品名称
+  string medicines_type = 3;  // 药品类型
+  string prescription_type = 4; // 处方类型
+  double num = 5;             // 数量
+  string unit = 6;            // 单位
+}
+
+// 选择药品响应
+message SelectMedicinesResp {
+  int64 code = 1;
+  string message = 2;
+  MedicinesInfo medicines = 3;
+}
+
+// 药品信息
+message MedicinesInfo {
+  uint64 medicines_id = 1;    // 药品ID
+  string medicines_number = 2; // 药品编号
+  string medicines_name = 3;  // 药品名称
+  string medicines_type = 4;  // 药品类型
+  string prescription_type = 5; // 处方类型
+  double prescription_price = 6; // 处方价格
+  string unit = 7;            // 单位
+  int32 conversion = 8;       // 换算
+  string keywords = 9;        // 关键词
+  string producter_id = 10;   // 生产厂家ID
+  string status = 11;         // 状态
+  double medicines_stock_num = 12; // 库存数量
+  double medicines_stock_danger_num = 13; // 危险库存数量
+  string create_time = 14;    // 创建时间
+  string update_time = 15;    // 更新时间
+  string create_by = 16;      // 创建人
+  string update_by = 17;      // 更新人
+  string del_flag = 18;       // 删除标志
+}
+
+// 获取药品列表请求
+message GetMedicinesListReq {
+  int64 page = 1;
+  int64 page_size = 2;
+  string medicines_name = 3;  // 药品名称
+  string medicines_type = 4;  // 药品类型
+  string prescription_type = 5; // 处方类型
+  string status = 6;          // 状态
+  string keywords = 7;        // 关键词
+}
+
+// 获取药品列表响应
+message GetMedicinesListResp {
+  int64 code = 1;
+  string message = 2;
+  repeated MedicinesInfo list = 3;
+  int64 total = 4;
+}
+
+// 获取药品详情请求
+message GetMedicinesDetailReq {
+  uint64 medicines_id = 1;    // 药品ID
+}
+
+// 获取药品详情响应
+message GetMedicinesDetailResp {
+  int64 code = 1;
+  string message = 2;
+  MedicinesInfo detail = 3;
+}
+
+// 创建病例请求
+message CreateCareHistoryReq {
+  string ch_id = 1;           // 病例ID
+  int64 user_id = 2;          // 医生ID
+  string user_name = 3;       // 医生姓名
+  string patient_id = 4;      // 患者ID
+  string patient_name = 5;    // 患者姓名
+  int64 dept_id = 6;          // 科室ID
+  string dept_name = 7;       // 科室名称
+  string receive_type = 8;    // 接诊类型
+  string is_contagious = 9;   // 是否传染病
+  string case_date = 10;      // 病例日期
+  string reg_id = 11;         // 挂号ID
+  string case_title = 12;     // 病例标题
+  string case_result = 13;    // 病例结果
+  string doctor_tips = 14;    // 医生建议
+  string remark = 15;         // 备注
+}
+
+// 创建病例响应
+message CreateCareHistoryResp {
+  int64 code = 1;
+  string message = 2;
+  string ch_id = 3;           // 病例ID
+}
+
+// 获取病例列表请求
+message GetCareHistoryListReq {
+  int64 page = 1;
+  int64 page_size = 2;
+  string patient_id = 3;      // 患者ID
+  string patient_name = 4;    // 患者姓名
+  int64 user_id = 5;          // 医生ID
+  string dept_id = 6;         // 科室ID
+  string case_date = 7;       // 病例日期
+  string start_time = 8;      // 开始时间
+  string end_time = 9;        // 结束时间
+}
+
+// 病例信息
+message CareHistoryInfo {
+  string ch_id = 1;           // 病例ID
+  int64 user_id = 2;          // 医生ID
+  string user_name = 3;       // 医生姓名
+  string patient_id = 4;      // 患者ID
+  string patient_name = 5;    // 患者姓名
+  int64 dept_id = 6;          // 科室ID
+  string dept_name = 7;       // 科室名称
+  string receive_type = 8;    // 接诊类型
+  string is_contagious = 9;   // 是否传染病
+  string care_time = 10;      // 就诊时间
+  string case_date = 11;      // 病例日期
+  string reg_id = 12;         // 挂号ID
+  string case_title = 13;     // 病例标题
+  string case_result = 14;    // 病例结果
+  string doctor_tips = 15;    // 医生建议
+  string remark = 16;         // 备注
+}
+
+// 获取病例列表响应
+message GetCareHistoryListResp {
+  int64 code = 1;
+  string message = 2;
+  repeated CareHistoryInfo list = 3;
+  int64 total = 4;
+}
+
+// 获取病例详情请求
+message GetCareHistoryDetailReq {
+  string ch_id = 1;           // 病例ID
+}
+
+// 获取病例详情响应
+message GetCareHistoryDetailResp {
+  int64 code = 1;
+  string message = 2;
+  CareHistoryInfo detail = 3;
+}
+
+// ========== 排行榜相关 ==========
+
+// 获取周排行榜请求
+message GetWeeklyRankingReq {
+  int64 limit = 1; // 获取前N名，默认10
+}
+
+// 排行榜信息
+message RankingInfo {
+  int64 rank = 1;                    // 排名
+  int64 doctor_id = 2;               // 医生ID
+  string doctor_name = 3;            // 医生姓名
+  string dept_name = 4;              // 科室名称
+  double total_performance = 5;      // 总业绩
+  int64 prescription_count = 6;      // 处方数量
+}
+
+// 获取周排行榜响应
+message GetWeeklyRankingResp {
+  int64 code = 1;
+  string message = 2;
+  repeated RankingInfo rankings = 3;  // 排行榜列表
+  string week_start = 4;             // 周开始日期
+  string week_end = 5;               // 周结束日期
+}
+
+// 生成周排行榜请求
+message GenerateWeeklyRankingReq {
+  // 空请求，系统自动生成
+}
+
+// 生成周排行榜响应
+message GenerateWeeklyRankingResp {
+  int64 code = 1;
+  string message = 2;
+  bool success = 3;                  // 是否成功
+  int64 doctor_count = 4;            // 生成的医生数量
+}
+
+// ========== 业绩相关 ==========
+
+// 获取医生业绩请求
+message GetDoctorPerformanceReq {
+  int64 doctor_id = 1;               // 医生ID
+  string start_date = 2;             // 开始日期
+  string end_date = 3;               // 结束日期
+}
+
+// 业绩明细信息
+message PerformanceDetail {
+  string performance_id = 1;         // 业绩ID
+  string co_id = 2;                  // 处方ID
+  double payment_amount = 3;         // 缴费金额
+  double performance_amount = 4;     // 业绩金额
+  double performance_rate = 5;       // 业绩比例
+  string performance_date = 6;       // 业绩日期
+}
+
+// 医生业绩信息
+message DoctorPerformanceInfo {
+  int64 doctor_id = 1;               // 医生ID
+  string doctor_name = 2;            // 医生姓名
+  string dept_name = 3;              // 科室名称
+  double total_performance = 4;      // 总业绩
+  int64 prescription_count = 5;      // 处方数量
+  int64 payment_count = 6;           // 缴费次数
+  repeated PerformanceDetail performance_details = 7; // 业绩明细
+}
+
+// 获取医生业绩响应
+message GetDoctorPerformanceResp {
+  int64 code = 1;
+  string message = 2;
+  DoctorPerformanceInfo performance = 3; // 业绩信息
+}
+

@@ -82,7 +82,7 @@ func (l *MakeAppointmentLogic) MakeAppointment(req *patient.MakeAppointmentReque
 	// 5. 构建响应数据
 	resp := &patient.MakeAppointmentResponse{
 		Appointment: &patient.Appointment{
-			Id:           0, // 可用自增ID或RegistrationID
+			Id:           1, // 可用自增ID或RegistrationID
 			PatientId:    req.PatientId,
 			DoctorId:     req.DoctorId,
 			DepartmentId: req.DepartmentId,

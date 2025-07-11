@@ -1,0 +1,13 @@
+Name: doctor_srv
+Host: 0.0.0.0
+Port: 8081
+
+Database:
+  DataSource: root:wzydsb@tcp(14.103.195.100:3306)/sxt_his?charset=utf8mb4&parseTime=True&loc=Local
+
+Cache:
+  - Host: 14.103.149.204:6379
+    Type: node
+    Weight: 100
+    Pass: "f453387f13015d7894fda021ae5fef33"
+    Key: "" 

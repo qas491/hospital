@@ -3,6 +3,8 @@ package logic
 import (
 	"context"
 	"fmt"
+	"time"
+
 	"github.com/qas491/hospital/patient_srv/model/mysql"
 
 	"github.com/qas491/hospital/patient_srv/internal/svc"
@@ -34,13 +36,13 @@ func NewListTimeSlotsLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Lis
 // TimeSlot 时间段信息数据模型
 // 对应数据库表 his_scheduling，用于存储医生排班信息
 type TimeSlot struct {
-	ID             int32  // 时间段ID，可用自增或组合主键
-	DoctorID       int32  `gorm:"column:user_id"`        // 医生ID
-	Date           string `gorm:"column:scheduling_day"` // 排班日期
-	StartTime      string // 开始时间，需根据 subsection_type 映射
-	EndTime        string // 结束时间
-	Available      int32  // 可用名额，需业务逻辑统计
-	SubsectionType string `gorm:"column:subsection_type"` // 时间段类型（上午/下午）
+	DoctorID       int32      `gorm:"column:user_id"`         // 医生ID
+	DeptID         int32      `gorm:"column:dept_id"`         // 科室ID
+	Date           string     `gorm:"column:scheduling_day"`  // 排班日期
+	SubsectionType string     `gorm:"column:subsection_type"` // 时间段类型（上午/下午）
+	SchedulingType string     `gorm:"column:scheduling_type"` // 排班类型
+	CreateTime     *time.Time `gorm:"column:create_time"`     // 创建时间
+	CreateBy       string     `gorm:"column:create_by"`       // 创建人
 }
 
 // TableName 指定数据库表名
@@ -70,6 +72,14 @@ func subsectionToTime(subsection string) (string, string) {
 // @return *seckill.ListTimeSlotsResponse 时间段列表响应
 // @return error 错误信息
 func (l *ListTimeSlotsLogic) ListTimeSlots(req *patient.ListTimeSlotsRequest) (*patient.ListTimeSlotsResponse, error) {
+	// 参数验证
+	if req.DoctorId <= 0 {
+		return nil, fmt.Errorf("医生ID无效")
+	}
+	if req.Date == "" {
+		return nil, fmt.Errorf("日期不能为空")
+	}
+
 	// 检查数据库连接
 	db, err := mysql.GetDB()
 	if err != nil {
@@ -81,7 +91,7 @@ func (l *ListTimeSlotsLogic) ListTimeSlots(req *patient.ListTimeSlotsRequest) (*
 	var slots []TimeSlot
 	if err := db.Where("user_id = ? AND scheduling_day = ?", req.DoctorId, req.Date).Find(&slots).Error; err != nil {
 		l.Logger.Errorf("查询医生 %d 在 %s 的排班信息失败: %v", req.DoctorId, req.Date, err)
-		return nil, err
+		return nil, fmt.Errorf("查询排班信息失败: %v", err)
 	}
 
 	// 构建响应数据
@@ -90,17 +100,40 @@ func (l *ListTimeSlotsLogic) ListTimeSlots(req *patient.ListTimeSlotsRequest) (*
 		// 将时间段类型转换为具体时间
 		start, end := subsectionToTime(s.SubsectionType)
 
+		// 计算可用名额（实际应该查询已预约数量）
+		available := l.calculateAvailableSlots(s.DeptID, req.DoctorId, req.Date, s.SubsectionType)
+
 		// 将数据库模型转换为proto响应格式
 		resp.Timeslots = append(resp.Timeslots, &patient.TimeSlot{
-			Id:        s.ID,
+			Id:        s.DeptID,
 			DoctorId:  s.DoctorID,
 			Date:      s.Date,
 			StartTime: start,
 			EndTime:   end,
-			Available: 10, // 假设每个时间段10个号，实际应统计剩余号源
+			Available: available,
 		})
 	}
 
 	l.Logger.Infof("成功查询到医生 %d 在 %s 的 %d 个时间段", req.DoctorId, req.Date, len(resp.Timeslots))
 	return resp, nil
+}
+
+// calculateAvailableSlots 计算可用名额
+// @param slotId 时间段ID
+// @param doctorId 医生ID
+// @param date 日期
+// @param subsectionType 时间段类型
+// @return int32 可用名额
+func (l *ListTimeSlotsLogic) calculateAvailableSlots(slotId int32, doctorId int32, date string, subsectionType string) int32 {
+	// 这里应该查询已预约的数量，然后计算剩余名额
+	// 暂时返回固定值，实际应该从数据库查询
+	var totalSlots int32 = 20 // 每个时间段总名额
+	var bookedSlots int32 = 0 // 已预约名额
+
+	// TODO: 实现从数据库查询已预约数量的逻辑
+	// 示例查询：
+	// SELECT COUNT(*) FROM his_appointment
+	// WHERE doctor_id = ? AND appointment_date = ? AND subsection_type = ? AND status != 'cancelled'
+
+	return totalSlots - bookedSlots
 }
