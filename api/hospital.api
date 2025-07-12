@@ -341,57 +341,56 @@ type GetCareHistoryDetailResp {
 }
 
 // ========== 排行榜相关 ==========
-
 type GetWeeklyRankingReq {
-    limit int64 `json:"limit"` // 获取前N名，默认10
+	limit int64 `json:"limit"` // 获取前N名，默认10
 }
 
 type GetWeeklyRankingResp {
-    code int64 `json:"code"`                    // 状态码
-    message string `json:"message"`             // 提示信息
-    rankings []RankingInfo `json:"rankings"`    // 排行榜列表
-    week_start string `json:"week_start"`       // 周开始日期
-    week_end string `json:"week_end"`           // 周结束日期
+	code       int64         `json:"code"` // 状态码
+	message    string        `json:"message"` // 提示信息
+	rankings   []RankingInfo `json:"rankings"` // 排行榜列表
+	week_start string        `json:"week_start"` // 周开始日期
+	week_end   string        `json:"week_end"` // 周结束日期
 }
 
 type RankingInfo {
-    rank int64 `json:"rank"`                    // 排名
-    doctor_id int64 `json:"doctor_id"`          // 医生ID
-    doctor_name string `json:"doctor_name"`     // 医生姓名
-    dept_name string `json:"dept_name"`         // 科室名称
-    total_performance float64 `json:"total_performance"` // 总业绩
-    prescription_count int64 `json:"prescription_count"` // 处方数量
+	rank               int64   `json:"rank"` // 排名
+	doctor_id          int64   `json:"doctor_id"` // 医生ID
+	doctor_name        string  `json:"doctor_name"` // 医生姓名
+	dept_name          string  `json:"dept_name"` // 科室名称
+	total_performance  float64 `json:"total_performance"` // 总业绩
+	prescription_count int64   `json:"prescription_count"` // 处方数量
 }
 
 type GetDoctorPerformanceReq {
-    doctor_id int64 `json:"doctor_id"`          // 医生ID
-    start_date string `json:"start_date"`       // 开始日期
-    end_date string `json:"end_date"`           // 结束日期
+	doctor_id  int64  `json:"doctor_id"` // 医生ID
+	start_date string `json:"start_date"` // 开始日期
+	end_date   string `json:"end_date"` // 结束日期
 }
 
 type GetDoctorPerformanceResp {
-    code int64 `json:"code"`                    // 状态码
-    message string `json:"message"`             // 提示信息
-    performance DoctorPerformanceInfo `json:"performance"` // 业绩信息
+	code        int64                 `json:"code"` // 状态码
+	message     string                `json:"message"` // 提示信息
+	performance DoctorPerformanceInfo `json:"performance"` // 业绩信息
 }
 
 type DoctorPerformanceInfo {
-    doctor_id int64 `json:"doctor_id"`          // 医生ID
-    doctor_name string `json:"doctor_name"`     // 医生姓名
-    dept_name string `json:"dept_name"`         // 科室名称
-    total_performance float64 `json:"total_performance"` // 总业绩
-    prescription_count int64 `json:"prescription_count"` // 处方数量
-    payment_count int64 `json:"payment_count"`  // 缴费次数
-    performance_details []PerformanceDetail `json:"performance_details"` // 业绩明细
+	doctor_id           int64               `json:"doctor_id"` // 医生ID
+	doctor_name         string              `json:"doctor_name"` // 医生姓名
+	dept_name           string              `json:"dept_name"` // 科室名称
+	total_performance   float64             `json:"total_performance"` // 总业绩
+	prescription_count  int64               `json:"prescription_count"` // 处方数量
+	payment_count       int64               `json:"payment_count"` // 缴费次数
+	performance_details []PerformanceDetail `json:"performance_details"` // 业绩明细
 }
 
 type PerformanceDetail {
-    performance_id string `json:"performance_id"` // 业绩ID
-    co_id string `json:"co_id"`                  // 处方ID
-    payment_amount float64 `json:"payment_amount"` // 缴费金额
-    performance_amount float64 `json:"performance_amount"` // 业绩金额
-    performance_rate float64 `json:"performance_rate"` // 业绩比例
-    performance_date string `json:"performance_date"` // 业绩日期
+	performance_id     string  `json:"performance_id"` // 业绩ID
+	co_id              string  `json:"co_id"` // 处方ID
+	payment_amount     float64 `json:"payment_amount"` // 缴费金额
+	performance_amount float64 `json:"performance_amount"` // 业绩金额
+	performance_rate   float64 `json:"performance_rate"` // 业绩比例
+	performance_date   string  `json:"performance_date"` // 业绩日期
 }
 
 // ========== 路由与服务 ==========
@@ -419,49 +418,49 @@ service hospital {
 	post /appointments/:appointment_id/cancel returns (CancelAppointmentResp)
 }
 
-@server(
-    jwt: Auth
-    group: doctor
+@server (
+	jwt:   Auth
+	group: doctor
 )
 service hospital {
-    // 处方相关
-    @handler createPrescription
-    post /prescriptions(CreatePrescriptionReq) returns(CreatePrescriptionResp)
-    
-    @handler reviewPrescription
-    post /prescriptions/:co_id/review(ReviewPrescriptionReq) returns(ReviewPrescriptionResp)
-    
-    @handler getPrescriptionList
-    get /prescriptions(GetPrescriptionListReq) returns(GetPrescriptionListResp)
-    
-    @handler getPrescriptionDetail
-    get /prescriptions/:co_id() returns(GetPrescriptionDetailResp)
-    
-    // 药品相关
-    @handler selectMedicines
-    post /medicines/select(SelectMedicinesReq) returns(SelectMedicinesResp)
-    
-    @handler getMedicinesList
-    get /medicines(GetMedicinesListReq) returns(GetMedicinesListResp)
-    
-    @handler getMedicinesDetail
-    get /medicines/:medicines_id() returns(GetMedicinesDetailResp)
-    
-    // 病例相关
-    @handler createCareHistory
-    post /care-history(CreateCareHistoryReq) returns(CreateCareHistoryResp)
-    
-    @handler getCareHistoryList
-    get /care-history(GetCareHistoryListReq) returns(GetCareHistoryListResp)
-    
-    @handler getCareHistoryDetail
-    get /care-history/:ch_id() returns(GetCareHistoryDetailResp)
-    
-    // 排行榜相关
-    @handler getWeeklyRanking
-    get /rankings/weekly(GetWeeklyRankingReq) returns(GetWeeklyRankingResp)
-    
-    @handler getDoctorPerformance
-    get /doctors/:doctor_id/performance(GetDoctorPerformanceReq) returns(GetDoctorPerformanceResp)
+	// 处方相关
+	@handler createPrescription
+	post /prescriptions (CreatePrescriptionReq) returns (CreatePrescriptionResp)
+
+	@handler reviewPrescription
+	post /prescriptions/:co_id/review (ReviewPrescriptionReq) returns (ReviewPrescriptionResp)
+
+	@handler getPrescriptionList
+	get /prescriptions (GetPrescriptionListReq) returns (GetPrescriptionListResp)
+
+	@handler getPrescriptionDetail
+	get /prescriptions/:co_id returns (GetPrescriptionDetailResp)
+
+	// 药品相关
+	@handler selectMedicines
+	post /medicines/select (SelectMedicinesReq) returns (SelectMedicinesResp)
+
+	@handler getMedicinesList
+	get /medicines (GetMedicinesListReq) returns (GetMedicinesListResp)
+
+	@handler getMedicinesDetail
+	get /medicines/:medicines_id returns (GetMedicinesDetailResp)
+
+	// 病例相关
+	@handler createCareHistory
+	post /care-history (CreateCareHistoryReq) returns (CreateCareHistoryResp)
+
+	@handler getCareHistoryList
+	get /care-history (GetCareHistoryListReq) returns (GetCareHistoryListResp)
+
+	@handler getCareHistoryDetail
+	get /care-history/:ch_id returns (GetCareHistoryDetailResp)
+
+	// 排行榜相关
+	@handler getWeeklyRanking
+	get /rankings/weekly (GetWeeklyRankingReq) returns (GetWeeklyRankingResp)
+
+	@handler getDoctorPerformance
+	get /doctors/:doctor_id/performance (GetDoctorPerformanceReq) returns (GetDoctorPerformanceResp)
 }
 

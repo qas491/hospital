@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"hospital/api/internal/svc"
-	"hospital/api/internal/types"
-
+	"github.com/qas491/hospital/api/internal/svc"
+	"github.com/qas491/hospital/api/internal/types"
+	"github.com/qas491/hospital/api/model/redis"
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
@@ -36,11 +36,11 @@ func (l *GetWeeklyRankingLogic) GetWeeklyRanking(req *types.GetWeeklyRankingReq)
 
 	// 构建响应
 	resp = &types.GetWeeklyRankingResp{
-		Code:      200,
-		Message:   "获取成功",
-		Rankings:  rankings,
-		WeekStart: l.getWeekStart().Format("2006-01-02"),
-		WeekEnd:   l.getWeekEnd().Format("2006-01-02"),
+		Code:       200,
+		Message:    "获取成功",
+		Rankings:   rankings,
+		Week_start: l.getWeekStart().Format("2006-01-02"),
+		Week_end:   l.getWeekEnd().Format("2006-01-02"),
 	}
 
 	return resp, nil
@@ -51,7 +51,7 @@ func (l *GetWeeklyRankingLogic) getWeeklyRankingFromRedis(limit int) ([]types.Ra
 	redisKey := "weekly_ranking"
 
 	// 从Redis获取排行榜数据（按分数降序）
-	result, err := l.svcCtx.RedisClient.ZRevRangeWithScores(redisKey, 0, int64(limit-1)).Result()
+	result, err := redis.RDB.ZRevRangeWithScores(context.Background(), redisKey, 0, int64(limit-1)).Result()
 	if err != nil {
 		return nil, fmt.Errorf("从Redis获取排行榜失败: %v", err)
 	}
@@ -68,12 +68,12 @@ func (l *GetWeeklyRankingLogic) getWeeklyRankingFromRedis(limit int) ([]types.Ra
 			prescriptionCount, _ := strconv.ParseInt(parts[3], 10, 64)
 
 			ranking := types.RankingInfo{
-				Rank:              int64(i + 1),
-				DoctorId:          doctorID,
-				DoctorName:        doctorName,
-				DeptName:          deptName,
-				TotalPerformance:  item.Score,
-				PrescriptionCount: prescriptionCount,
+				Rank:               int64(i + 1),
+				Doctor_id:          doctorID,
+				Doctor_name:        doctorName,
+				Dept_name:          deptName,
+				Total_performance:  item.Score,
+				Prescription_count: prescriptionCount,
 			}
 			rankings = append(rankings, ranking)
 		}

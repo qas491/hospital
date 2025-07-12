@@ -16,18 +16,23 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodPost,
-				Path:    "/carehistories",
+				Path:    "/care-history",
 				Handler: doctor.CreateCareHistoryHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodGet,
-				Path:    "/carehistories",
+				Path:    "/care-history",
 				Handler: doctor.GetCareHistoryListHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodGet,
-				Path:    "/carehistories/:ch_id",
+				Path:    "/care-history/:ch_id",
 				Handler: doctor.GetCareHistoryDetailHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/doctors/:doctor_id/performance",
+				Handler: doctor.GetDoctorPerformanceHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodGet,
@@ -63,6 +68,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Method:  http.MethodPost,
 				Path:    "/prescriptions/:co_id/review",
 				Handler: doctor.ReviewPrescriptionHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/rankings/weekly",
+				Handler: doctor.GetWeeklyRankingHandler(serverCtx),
 			},
 		},
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),

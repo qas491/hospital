@@ -5,6 +5,7 @@ import (
 
 	"github.com/qas491/hospital/api/internal/svc"
 	"github.com/qas491/hospital/api/internal/types"
+	"github.com/qas491/hospital/doctor_srv/doctor"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,8 +24,19 @@ func NewReviewPrescriptionLogic(ctx context.Context, svcCtx *svc.ServiceContext)
 	}
 }
 
-func (l *ReviewPrescriptionLogic) ReviewPrescription(req *types.ReviewPrescriptionReq) (resp *types.ReviewPrescriptionResp, err error) {
-	// todo: add your logic here and delete this line
-
-	return
+func (l *ReviewPrescriptionLogic) ReviewPrescription(req *types.ReviewPrescriptionReq) (*types.ReviewPrescriptionResp, error) {
+	rpcResp, err := l.svcCtx.DoctorRpc.ReviewPrescription(l.ctx, &doctor.ReviewPrescriptionReq{
+		CoId:         req.Co_id,
+		ReviewStatus: req.Review_status,
+		ReviewBy:     req.Review_by,
+		ReviewRemark: req.Review_remark,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &types.ReviewPrescriptionResp{
+		Code:    rpcResp.Code,
+		Message: rpcResp.Message,
+		Success: rpcResp.Success,
+	}, nil
 }

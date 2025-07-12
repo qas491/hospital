@@ -6,6 +6,7 @@ import (
 	"github.com/qas491/hospital/api/internal/svc"
 	"github.com/qas491/hospital/api/internal/types"
 
+	"github.com/qas491/hospital/doctor_srv/doctor"
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
@@ -23,8 +24,40 @@ func NewGetCareHistoryDetailLogic(ctx context.Context, svcCtx *svc.ServiceContex
 	}
 }
 
-func (l *GetCareHistoryDetailLogic) GetCareHistoryDetail(req *types.GetCareHistoryDetailReq) (resp *types.GetCareHistoryDetailResp, err error) {
-	// todo: add your logic here and delete this line
+func (l *GetCareHistoryDetailLogic) GetCareHistoryDetail(req *types.GetCareHistoryDetailReq) (*types.GetCareHistoryDetailResp, error) {
+	rpcResp, err := l.svcCtx.DoctorRpc.GetCareHistoryDetail(l.ctx, &doctor.GetCareHistoryDetailReq{
+		ChId: req.Ch_id,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &types.GetCareHistoryDetailResp{
+		Code:    rpcResp.Code,
+		Message: rpcResp.Message,
+		Detail:  convertToCareHistoryInfo(rpcResp.Detail),
+	}, nil
+}
 
-	return
+func convertToCareHistoryInfo(in *doctor.CareHistoryInfo) types.CareHistoryInfo {
+	if in == nil {
+		return types.CareHistoryInfo{}
+	}
+	return types.CareHistoryInfo{
+		Ch_id:         in.ChId,
+		User_id:       in.UserId,
+		User_name:     in.UserName,
+		Patient_id:    in.PatientId,
+		Patient_name:  in.PatientName,
+		Dept_id:       in.DeptId,
+		Dept_name:     in.DeptName,
+		Receive_type:  in.ReceiveType,
+		Is_contagious: in.IsContagious,
+		Care_time:     in.CareTime,
+		Case_date:     in.CaseDate,
+		Reg_id:        in.RegId,
+		Case_title:    in.CaseTitle,
+		Case_result:   in.CaseResult,
+		Doctor_tips:   in.DoctorTips,
+		Remark:        in.Remark,
+	}
 }

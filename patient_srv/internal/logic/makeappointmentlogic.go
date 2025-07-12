@@ -3,9 +3,10 @@ package logic
 import (
 	"context"
 	"fmt"
+	"time"
+
 	"github.com/google/uuid"
 	"github.com/qas491/hospital/patient_srv/model/mysql"
-	"time"
 
 	"github.com/qas491/hospital/patient_srv/internal/svc"
 	"github.com/qas491/hospital/patient_srv/patient"
@@ -45,6 +46,9 @@ func (l *MakeAppointmentLogic) MakeAppointment(req *patient.MakeAppointmentReque
 		l.Logger.Errorf("数据库连接失败: %v", err)
 		return nil, fmt.Errorf("数据库连接失败")
 	}
+
+	// 打印收到的 PatientId
+	l.Logger.Infof("收到预约请求，req: %+v", req)
 
 	// 1. 验证患者信息是否存在
 	var patients mysql.HisPatient

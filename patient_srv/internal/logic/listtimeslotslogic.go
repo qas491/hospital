@@ -96,16 +96,19 @@ func (l *ListTimeSlotsLogic) ListTimeSlots(req *patient.ListTimeSlotsRequest) (*
 
 	// 构建响应数据
 	resp := &patient.ListTimeSlotsResponse{}
-	for _, s := range slots {
+	for i, s := range slots {
 		// 将时间段类型转换为具体时间
 		start, end := subsectionToTime(s.SubsectionType)
 
 		// 计算可用名额（实际应该查询已预约数量）
-		available := l.calculateAvailableSlots(s.DeptID, req.DoctorId, req.Date, s.SubsectionType)
+		available := l.calculateAvailableSlots(req.DoctorId, req.Date, s.SubsectionType)
+
+		// 生成时间段ID（使用索引作为ID）
+		slotId := int32(i + 1)
 
 		// 将数据库模型转换为proto响应格式
 		resp.Timeslots = append(resp.Timeslots, &patient.TimeSlot{
-			Id:        s.DeptID,
+			Id:        slotId,
 			DoctorId:  s.DoctorID,
 			Date:      s.Date,
 			StartTime: start,
@@ -119,12 +122,11 @@ func (l *ListTimeSlotsLogic) ListTimeSlots(req *patient.ListTimeSlotsRequest) (*
 }
 
 // calculateAvailableSlots 计算可用名额
-// @param slotId 时间段ID
 // @param doctorId 医生ID
 // @param date 日期
 // @param subsectionType 时间段类型
 // @return int32 可用名额
-func (l *ListTimeSlotsLogic) calculateAvailableSlots(slotId int32, doctorId int32, date string, subsectionType string) int32 {
+func (l *ListTimeSlotsLogic) calculateAvailableSlots(doctorId int32, date string, subsectionType string) int32 {
 	// 这里应该查询已预约的数量，然后计算剩余名额
 	// 暂时返回固定值，实际应该从数据库查询
 	var totalSlots int32 = 20 // 每个时间段总名额
@@ -132,8 +134,8 @@ func (l *ListTimeSlotsLogic) calculateAvailableSlots(slotId int32, doctorId int3
 
 	// TODO: 实现从数据库查询已预约数量的逻辑
 	// 示例查询：
-	// SELECT COUNT(*) FROM his_appointment
-	// WHERE doctor_id = ? AND appointment_date = ? AND subsection_type = ? AND status != 'cancelled'
+	// SELECT COUNT(*) FROM his_registration
+	// WHERE user_id = ? AND visit_date = ? AND subsection_type = ? AND registration_status != 'cancelled'
 
 	return totalSlots - bookedSlots
 }

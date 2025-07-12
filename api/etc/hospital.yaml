@@ -1,3 +1,18 @@
 Name: hospital
 Host: 0.0.0.0
 Port: 8888
+
+Auth:
+  AccessSecret: "hospital-secret-key-2024"
+  AccessExpire: 3600
+DoctorRpcConf:
+  ETCD:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: doctor.rpc
+
+PatientRpcConf:
+  ETCD:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: patient.rpc

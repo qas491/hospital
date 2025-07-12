@@ -1,9 +1,9 @@
-Name: doctor_srv
+Name: doctor.rpc
 ListenOn: 0.0.0.0:8081
 Etcd:
   Hosts:
     - 127.0.0.1:2379
-  Key: patient.rpc
+  Key: doctor.rpc
 
 Database:
   DataSource: root:wzydsb@tcp(14.103.195.100:3306)/sxt_his?charset=utf8mb4&parseTime=True&loc=Local

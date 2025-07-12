@@ -48,7 +48,6 @@ var NacosConfig Nacos
 // 优先从Nacos获取配置，如果失败或不完整则使用本地配置
 func Init() {
 	// 先设置本地默认配置作为备选
-	initLocalConfig()
 
 	// 尝试从Nacos获取配置
 	if err := initFromNacos(); err != nil {

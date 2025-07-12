@@ -5,6 +5,7 @@ import (
 
 	"github.com/qas491/hospital/api/internal/svc"
 	"github.com/qas491/hospital/api/internal/types"
+	"github.com/qas491/hospital/patient_srv/patient"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,8 +24,25 @@ func NewMakeAppointmentLogic(ctx context.Context, svcCtx *svc.ServiceContext) *M
 	}
 }
 
-func (l *MakeAppointmentLogic) MakeAppointment(req *types.MakeAppointmentReq) (resp *types.MakeAppointmentResp, err error) {
-	// todo: add your logic here and delete this line
-
-	return
+func (l *MakeAppointmentLogic) MakeAppointment(req *types.MakeAppointmentReq) (*types.MakeAppointmentResp, error) {
+	rpcResp, err := l.svcCtx.PatientRpc.MakeAppointment(l.ctx, &patient.MakeAppointmentRequest{
+		PatientId:    req.Patient_id,
+		DoctorId:     req.Doctor_id,
+		DepartmentId: req.Department_id,
+		TimeslotId:   req.Timeslot_id,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &types.MakeAppointmentResp{
+		Appointment: types.Appointment{
+			Id:            rpcResp.Appointment.Id,
+			Patient_id:    rpcResp.Appointment.PatientId,
+			Doctor_id:     rpcResp.Appointment.DoctorId,
+			Department_id: rpcResp.Appointment.DepartmentId,
+			Timeslot_id:   rpcResp.Appointment.TimeslotId,
+			Status:        rpcResp.Appointment.Status,
+			Created_at:    rpcResp.Appointment.CreatedAt,
+		},
+	}, nil
 }

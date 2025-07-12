@@ -96,6 +96,16 @@ type Doctor struct {
 	Profile       string `json:"profile"`
 }
 
+type DoctorPerformanceInfo struct {
+	Doctor_id           int64               `json:"doctor_id"`           // 医生ID
+	Doctor_name         string              `json:"doctor_name"`         // 医生姓名
+	Dept_name           string              `json:"dept_name"`           // 科室名称
+	Total_performance   float64             `json:"total_performance"`   // 总业绩
+	Prescription_count  int64               `json:"prescription_count"`  // 处方数量
+	Payment_count       int64               `json:"payment_count"`       // 缴费次数
+	Performance_details []PerformanceDetail `json:"performance_details"` // 业绩明细
+}
+
 type GetAppointmentReq struct {
 	Appointment_id int32 `json:"appointment_id"`
 }
@@ -133,6 +143,18 @@ type GetCareHistoryListResp struct {
 	Message string            `json:"message"` // 提示信息
 	List    []CareHistoryInfo `json:"list"`    // 病例列表
 	Total   int64             `json:"total"`   // 总数
+}
+
+type GetDoctorPerformanceReq struct {
+	Doctor_id  int64  `json:"doctor_id"`  // 医生ID
+	Start_date string `json:"start_date"` // 开始日期
+	End_date   string `json:"end_date"`   // 结束日期
+}
+
+type GetDoctorPerformanceResp struct {
+	Code        int64                 `json:"code"`        // 状态码
+	Message     string                `json:"message"`     // 提示信息
+	Performance DoctorPerformanceInfo `json:"performance"` // 业绩信息
 }
 
 type GetMedicinesDetailReq struct {
@@ -190,6 +212,18 @@ type GetPrescriptionListResp struct {
 	Message string             `json:"message"` // 提示信息
 	List    []PrescriptionInfo `json:"list"`    // 处方列表
 	Total   int64              `json:"total"`   // 总数
+}
+
+type GetWeeklyRankingReq struct {
+	Limit int64 `json:"limit"` // 获取前N名，默认10
+}
+
+type GetWeeklyRankingResp struct {
+	Code       int64         `json:"code"`       // 状态码
+	Message    string        `json:"message"`    // 提示信息
+	Rankings   []RankingInfo `json:"rankings"`   // 排行榜列表
+	Week_start string        `json:"week_start"` // 周开始日期
+	Week_end   string        `json:"week_end"`   // 周结束日期
 }
 
 type ListDepartmentsReq struct {
@@ -263,6 +297,15 @@ type Patient struct {
 	Id_card string `json:"id_card"`
 }
 
+type PerformanceDetail struct {
+	Performance_id     string  `json:"performance_id"`     // 业绩ID
+	Co_id              string  `json:"co_id"`              // 处方ID
+	Payment_amount     float64 `json:"payment_amount"`     // 缴费金额
+	Performance_amount float64 `json:"performance_amount"` // 业绩金额
+	Performance_rate   float64 `json:"performance_rate"`   // 业绩比例
+	Performance_date   string  `json:"performance_date"`   // 业绩日期
+}
+
 type PrescriptionInfo struct {
 	Co_id        string             `json:"co_id"`        // 处方ID
 	Co_type      string             `json:"co_type"`      // 处方类型
@@ -288,6 +331,15 @@ type PrescriptionItem struct {
 	Amount      float64 `json:"amount"`      // 金额
 	Remark      string  `json:"remark"`      // 备注
 	Status      string  `json:"status"`      // 状态
+}
+
+type RankingInfo struct {
+	Rank               int64   `json:"rank"`               // 排名
+	Doctor_id          int64   `json:"doctor_id"`          // 医生ID
+	Doctor_name        string  `json:"doctor_name"`        // 医生姓名
+	Dept_name          string  `json:"dept_name"`          // 科室名称
+	Total_performance  float64 `json:"total_performance"`  // 总业绩
+	Prescription_count int64   `json:"prescription_count"` // 处方数量
 }
 
 type ReviewPrescriptionReq struct {

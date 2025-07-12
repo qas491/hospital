@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/base64"
 	"fmt"
+	"github.com/qas491/hospital/doctor_srv/configs"
 
 	"github.com/qas491/hospital/doctor_srv/until"
 
@@ -57,9 +58,9 @@ func (l *GetPrescriptionDetailLogic) GetPrescriptionDetail(in *doctor.GetPrescri
 	}
 
 	// 生成支付宝支付URL
-	factory := until.NewAlipayFactory("9021000142690950", "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCQf++nIwcPt+buWMwZhZVlEa3qlY0igK+1JMlzFHXnOu27cFRnJNXWJxdJ9fdDTAaotkmHWb1DkWEBUmJkXCB1MaHxI+MMv5NqoZ105p8nUTlgodE5dTASie4cwDm9ptdRo3MGaxXWzeSOAcmAAiQ4wq+tB2+35cOzfsNNGnPxPpSxbDFCe9cYW3Rm57utu6zv5g29sblU/aD4cPuM+ZLvcnXGUZZ+B2XuwV4n3HMVQI43A/kly8H1UuPh63OBoCvlZ/K2vvvVnySkm9hdxXFv/oiL4SY6wIHTAQGxyscZLqYSATsumc882TJ15kJmtg77MWy7paq6ZA+0EexSxhgNAgMBAAECggEAW0kXYyUTvvBU6VobhjwHxxPGJR5ZTOSzG+KjiRnx6iQmL3WlPIvesy163vSOQmtzAX43MVSV5mufNrCPDAvPTXoPbkFXnKQiQwjaahGPlc0QTGWtwXiw5+VPEca2M4OFH0P81J8t6sejjbq/SykPLPSA+vRptWlnmquIQdtmR45oZFPBb4r5EmuJ6J7X1lYr/R/jga0Wa5mS80HJ0i882pAEL4f35cQgJujm+frk5aBdjIwZ+H6HtcAdFcRUQdGsA00x3JV20J8I+cRt+EbQoFpYmjbzCOrkPtxa/yG5gOIUJtQ1buv+aawv92e63Q+VdtVZxYc59zQ6GLgEbheZwQKBgQDDEe6baqlDgJyXi6cKqeUuz2SsZTUthan44H/7ilU1fNL4uLadTNS4tCzebjFpGT2qc/EansONMeb8OHecsTz21d85rwrGCBpWfNtV6zvgwNkuuB9kl1sUP+pqmd7mKxXoqiVUTNg7HnXoi41QQR0fDMA7nvmJT1vPQkk3sz3D+QKBgQC9olV+ktO5CtytK4geKtEyoi6LkVggRB3Vf5S200JdtWv2/Xp6RqEJSpnBYt47Kbj+Bd4cPsiXX11kz+qFUUjXwupyzUOHpOVEUzlel6gqs81VDNsjH+cyB/kiS2YeOjDMfL5uRrhhyfUqtGs1qdFc0PrgloOL8N/OGPRQto8RtQKBgFrs/N+MtCE2zccF3XLnBmDvYunIsyTo7PWJD57cOCOab2xoDRb9PRprQY7cpkNq9IeDS5sw7c3euOBQIdDz/IrB3i8xHEB6fmxZ/pLp9xsoSROx11A4DMg/krDl0DRRWQD+bjABMbk81ZDzm4cREtXqR6CC1aXfS9gr+Zzw+5VhAoGBALKLDQPHKiCm4W8J9XaxyZVqrXgquFZoy84f+NzJu0qPbb92mMJXjXc6DdnORH5fohVJYP4m/qXG3B/2wlATYAoFMsg0CsjDsDjMQs+U6niKIWFaYViIyRyJ9T8czmDXWOqu6HzbiO5JP9OdWvODl+NTv2GFVQWFHLLnO+BiggGhAoGAbhx5fMhNq3u5qH2H61K8VIzPKHuBf4V1vgjzb40OeN6k5/hUswEVZy3LFhFZ3/9pdJXVspOF6+QCClBPmuVNvx1a311IspfetJhh/EeExQAyFk2l94MHJKfs633Hdi4Tw9cUFNs8SXaBtkB9VSI0jqZdBOviNy4nq4w/dcu2hBI=", false)
+	factory := until.NewAlipayFactory(configs.WiseConfig.Alipay.AppId, configs.WiseConfig.Alipay.Key, false)
 	payURL, err := factory.Pay(
-		"处方支付",                        // subject
+		"处方支付",                    // subject
 		order.CoID,                    // outTradeNo
 		FormatAmount(order.AllAmount), // totalAmount
 		"http://your_notify_url",      // notifyURL

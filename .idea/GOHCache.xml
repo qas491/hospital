@@ -13,6 +13,7 @@
         <entry key="Appointment">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
             </set>
           </value>
@@ -20,7 +21,15 @@
         <entry key="CancelAppointmentLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/patient/cancelappointmentlogic.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/cancelappointmentlogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CancelAppointmentReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -28,6 +37,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CancelAppointmentResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -41,6 +57,7 @@
         <entry key="CareHistoryInfo">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -48,6 +65,8 @@
         <entry key="Config">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/configs/config.go" />
+              <option value="file://$PROJECT_DIR$/api/internal/config/config.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/configs/config.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/config/config.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/configs/config.go" />
@@ -58,6 +77,7 @@
         <entry key="CreateCareHistoryLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/createcarehistorylogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/createcarehistorylogic.go" />
             </set>
           </value>
@@ -65,6 +85,7 @@
         <entry key="CreateCareHistoryReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -72,6 +93,7 @@
         <entry key="CreateCareHistoryResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -79,6 +101,7 @@
         <entry key="CreatePrescriptionLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/createprescriptionlogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/createprescriptionlogic.go" />
             </set>
           </value>
@@ -86,6 +109,7 @@
         <entry key="CreatePrescriptionReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -93,6 +117,7 @@
         <entry key="CreatePrescriptionResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -100,6 +125,7 @@
         <entry key="Department">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listdepartmentslogic.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
             </set>
@@ -108,8 +134,17 @@
         <entry key="Doctor">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listdoctorslogic.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DoctorPerformanceInfo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
+              <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
         </entry>
@@ -120,10 +155,39 @@
             </set>
           </value>
         </entry>
+        <entry key="GenerateWeeklyRankingLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/generateweeklyrankinglogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GenerateWeeklyRankingReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GenerateWeeklyRankingResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="GetAppointmentLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/patient/getappointmentlogic.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/getappointmentlogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetAppointmentReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -131,6 +195,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetAppointmentResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -144,6 +215,7 @@
         <entry key="GetCareHistoryDetailLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/getcarehistorydetaillogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/getcarehistorydetaillogic.go" />
             </set>
           </value>
@@ -151,6 +223,7 @@
         <entry key="GetCareHistoryDetailReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -158,6 +231,7 @@
         <entry key="GetCareHistoryDetailResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -165,6 +239,7 @@
         <entry key="GetCareHistoryListLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/getcarehistorylistlogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/getcarehistorylistlogic.go" />
             </set>
           </value>
@@ -172,6 +247,7 @@
         <entry key="GetCareHistoryListReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -179,6 +255,31 @@
         <entry key="GetCareHistoryListResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
+              <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDoctorPerformanceLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/getdoctorperformancelogic.go" />
+              <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/getdoctorperformancelogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDoctorPerformanceReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
+              <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDoctorPerformanceResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -186,6 +287,7 @@
         <entry key="GetMedicinesDetailLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/getmedicinesdetaillogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/getmedicinesdetaillogic.go" />
             </set>
           </value>
@@ -193,6 +295,7 @@
         <entry key="GetMedicinesDetailReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -200,6 +303,7 @@
         <entry key="GetMedicinesDetailResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -207,6 +311,7 @@
         <entry key="GetMedicinesListLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/getmedicineslistlogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/getmedicineslistlogic.go" />
             </set>
           </value>
@@ -214,6 +319,7 @@
         <entry key="GetMedicinesListReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -221,6 +327,7 @@
         <entry key="GetMedicinesListResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -228,6 +335,7 @@
         <entry key="GetPrescriptionDetailLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/getprescriptiondetaillogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/getprescriptiondetaillogic.go" />
             </set>
           </value>
@@ -235,6 +343,7 @@
         <entry key="GetPrescriptionDetailReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -242,6 +351,7 @@
         <entry key="GetPrescriptionDetailResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -249,6 +359,7 @@
         <entry key="GetPrescriptionListLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/getprescriptionlistlogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/getprescriptionlistlogic.go" />
             </set>
           </value>
@@ -256,6 +367,7 @@
         <entry key="GetPrescriptionListReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -263,6 +375,32 @@
         <entry key="GetPrescriptionListResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
+              <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetWeeklyRankingLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/getweeklyrankinglogic.go" />
+              <option value="file://$PROJECT_DIR$/api/internal/logic/getweeklyrankinglogic.go" />
+              <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/getweeklyrankinglogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetWeeklyRankingReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
+              <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetWeeklyRankingResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -270,6 +408,7 @@
         <entry key="HisCareHistory">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -278,6 +417,7 @@
         <entry key="HisCareOrder">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -286,6 +426,7 @@
         <entry key="HisCareOrderItem">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -294,6 +435,7 @@
         <entry key="HisCheckResult">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -302,6 +444,7 @@
         <entry key="HisOrderBackfee">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -310,6 +453,7 @@
         <entry key="HisOrderBackfeeItem">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -318,6 +462,7 @@
         <entry key="HisOrderCharge">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -326,6 +471,7 @@
         <entry key="HisOrderChargeItem">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -334,6 +480,7 @@
         <entry key="HisPatient">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -342,14 +489,37 @@
         <entry key="HisPatientFile">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HisPatientPayment">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HisPerformanceDetail">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HisPerformanceRule">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
             </set>
           </value>
         </entry>
         <entry key="HisRegistration">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -358,6 +528,7 @@
         <entry key="HisScheduling">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -366,15 +537,31 @@
         <entry key="HisVerificationCode">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HisWeeklyRanking">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
             </set>
           </value>
         </entry>
         <entry key="ListDepartmentsLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/patient/listdepartmentslogic.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listdepartmentslogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListDepartmentsReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -382,6 +569,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListDepartmentsResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -395,7 +589,15 @@
         <entry key="ListDoctorsLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/patient/listdoctorslogic.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listdoctorslogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListDoctorsReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -403,6 +605,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListDoctorsResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -416,7 +625,15 @@
         <entry key="ListTimeSlotsLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/patient/listtimeslotslogic.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listtimeslotslogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListTimeSlotsReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -424,6 +641,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListTimeSlotsResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -437,7 +661,15 @@
         <entry key="MakeAppointmentLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/patient/makeappointmentlogic.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/makeappointmentlogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MakeAppointmentReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -445,6 +677,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MakeAppointmentResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
             </set>
           </value>
         </entry>
@@ -465,6 +704,7 @@
         <entry key="MedicinesInfo">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -472,6 +712,7 @@
         <entry key="Nacos">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/configs/config.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/configs/config.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/configs/config.go" />
             </set>
@@ -480,13 +721,30 @@
         <entry key="Patient">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PerformanceCalculatorLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/performancecalculatorlogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PerformanceDetail">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
+              <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
         </entry>
         <entry key="PrescriptionInfo">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -494,6 +752,15 @@
         <entry key="PrescriptionItem">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
+              <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RankingInfo">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -501,6 +768,7 @@
         <entry key="ReviewPrescriptionLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/reviewprescriptionlogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/reviewprescriptionlogic.go" />
             </set>
           </value>
@@ -508,6 +776,7 @@
         <entry key="ReviewPrescriptionReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -515,13 +784,22 @@
         <entry key="ReviewPrescriptionResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SchedulerTaskLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/schedulertasklogic.go" />
             </set>
           </value>
         </entry>
         <entry key="SelectMedicinesLogic">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/logic/doctor/selectmedicineslogic.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/selectmedicineslogic.go" />
             </set>
           </value>
@@ -529,6 +807,7 @@
         <entry key="SelectMedicinesReq">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -536,6 +815,7 @@
         <entry key="SelectMedicinesResp">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go" />
             </set>
           </value>
@@ -543,6 +823,7 @@
         <entry key="ServiceContext">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/svc/servicecontext.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/internal/svc/servicecontext.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/svc/servicecontext.go" />
             </set>
@@ -551,6 +832,7 @@
         <entry key="StockInventoryLog">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -559,6 +841,7 @@
         <entry key="StockMedicines">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -567,6 +850,7 @@
         <entry key="StockProducer">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -575,6 +859,7 @@
         <entry key="StockProvider">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -583,6 +868,7 @@
         <entry key="StockPurchase">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -591,6 +877,7 @@
         <entry key="StockPurchaseItem">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -599,6 +886,7 @@
         <entry key="SysNotice">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -607,6 +895,7 @@
         <entry key="SysOperLog">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -615,6 +904,7 @@
         <entry key="SysRegisteredItem">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -623,6 +913,7 @@
         <entry key="SysRole">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -631,6 +922,7 @@
         <entry key="SysRoleMenu">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -639,6 +931,7 @@
         <entry key="SysRoleUser">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -647,6 +940,7 @@
         <entry key="SysSmsLog">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -655,6 +949,7 @@
         <entry key="SysUser">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/model/mysql/sxt_his.go" />
             </set>
@@ -663,6 +958,7 @@
         <entry key="TimeSlot">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/api/internal/types/types.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/internal/logic/listtimeslotslogic.go" />
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient.pb.go" />
             </set>
@@ -679,6 +975,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/patient_srv/patient/patient_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="WeeklyRankingLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/doctor_srv/internal/logic/weeklyrankinglogic.go" />
             </set>
           </value>
         </entry>
@@ -722,10 +1025,533 @@
     </option>
     <option name="scannedPathMapping">
       <map>
+        <entry key="file://$PROJECT_DIR$/api/configs/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752220314963" />
+              <option name="schema">
+                <list>
+                  <option value="Config" />
+                  <option value="Nacos" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/hospital.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752225381261" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752224480074" />
+              <option name="schema">
+                <list>
+                  <option value="Config" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/createcarehistoryhandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885585" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/createprescriptionhandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885592" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/getcarehistorydetailhandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885588" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/getcarehistorylisthandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885586" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/getdoctorperformancehandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752220882101" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/getmedicinesdetailhandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885590" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/getmedicineslisthandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885589" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/getprescriptiondetailhandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885594" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/getprescriptionlisthandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885593" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/getweeklyrankinghandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752220882103" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/reviewprescriptionhandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885595" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/doctor/selectmedicineshandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885591" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/getweeklyrankinghandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752221041499" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/patient/cancelappointmenthandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752241807284" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/patient/getappointmenthandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752241779952" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/patient/listdepartmentshandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752243645716" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/patient/listdoctorshandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752243665585" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/patient/listtimeslotshandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752241655470" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/patient/makeappointmenthandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752196885597" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/handler/routes.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752241635581" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/createcarehistorylogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752235013429" />
+              <option name="schema">
+                <list>
+                  <option value="CreateCareHistoryLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/createprescriptionlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752227264392" />
+              <option name="schema">
+                <list>
+                  <option value="CreatePrescriptionLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getcarehistorydetaillogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752235079307" />
+              <option name="schema">
+                <list>
+                  <option value="GetCareHistoryDetailLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getcarehistorylistlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752235129359" />
+              <option name="schema">
+                <list>
+                  <option value="GetCareHistoryListLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getdoctorperformancelogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752234948211" />
+              <option name="schema">
+                <list>
+                  <option value="GetDoctorPerformanceLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getmedicinesdetaillogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752235635133" />
+              <option name="schema">
+                <list>
+                  <option value="GetMedicinesDetailLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getmedicineslistlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752238453688" />
+              <option name="schema">
+                <list>
+                  <option value="GetMedicinesListLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getprescriptiondetaillogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752239918686" />
+              <option name="schema">
+                <list>
+                  <option value="GetPrescriptionDetailLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getprescriptionlistlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752239989603" />
+              <option name="schema">
+                <list>
+                  <option value="GetPrescriptionListLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getweeklyrankinglogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752241576633" />
+              <option name="schema">
+                <list>
+                  <option value="GetWeeklyRankingLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/reviewprescriptionlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752226181116" />
+              <option name="schema">
+                <list>
+                  <option value="ReviewPrescriptionLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/selectmedicineslogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752240043542" />
+              <option name="schema">
+                <list>
+                  <option value="SelectMedicinesLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/getweeklyrankinglogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752284279619" />
+              <option name="schema">
+                <list>
+                  <option value="GetWeeklyRankingLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/patient/cancelappointmentlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752240114128" />
+              <option name="schema">
+                <list>
+                  <option value="CancelAppointmentLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/patient/getappointmentlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752240454232" />
+              <option name="schema">
+                <list>
+                  <option value="GetAppointmentLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/patient/listdepartmentslogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752243578335" />
+              <option name="schema">
+                <list>
+                  <option value="ListDepartmentsLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/patient/listdoctorslogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752243605607" />
+              <option name="schema">
+                <list>
+                  <option value="ListDoctorsLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/patient/listtimeslotslogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752241901670" />
+              <option name="schema">
+                <list>
+                  <option value="ListTimeSlotsLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/logic/patient/makeappointmentlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752227419276" />
+              <option name="schema">
+                <list>
+                  <option value="MakeAppointmentLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/svc/servicecontext.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752224354076" />
+              <option name="schema">
+                <list>
+                  <option value="ServiceContext" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/internal/types/types.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752241635578" />
+              <option name="schema">
+                <list>
+                  <option value="Appointment" />
+                  <option value="CancelAppointmentReq" />
+                  <option value="CancelAppointmentResp" />
+                  <option value="CareHistoryInfo" />
+                  <option value="CreateCareHistoryReq" />
+                  <option value="CreateCareHistoryResp" />
+                  <option value="CreatePrescriptionReq" />
+                  <option value="CreatePrescriptionResp" />
+                  <option value="Department" />
+                  <option value="Doctor" />
+                  <option value="DoctorPerformanceInfo" />
+                  <option value="GetAppointmentReq" />
+                  <option value="GetAppointmentResp" />
+                  <option value="GetCareHistoryDetailReq" />
+                  <option value="GetCareHistoryDetailResp" />
+                  <option value="GetCareHistoryListReq" />
+                  <option value="GetCareHistoryListResp" />
+                  <option value="GetDoctorPerformanceReq" />
+                  <option value="GetDoctorPerformanceResp" />
+                  <option value="GetMedicinesDetailReq" />
+                  <option value="GetMedicinesDetailResp" />
+                  <option value="GetMedicinesListReq" />
+                  <option value="GetMedicinesListResp" />
+                  <option value="GetPrescriptionDetailReq" />
+                  <option value="GetPrescriptionDetailResp" />
+                  <option value="GetPrescriptionListReq" />
+                  <option value="GetPrescriptionListResp" />
+                  <option value="GetWeeklyRankingReq" />
+                  <option value="GetWeeklyRankingResp" />
+                  <option value="ListDepartmentsReq" />
+                  <option value="ListDepartmentsResp" />
+                  <option value="ListDoctorsReq" />
+                  <option value="ListDoctorsResp" />
+                  <option value="ListTimeSlotsReq" />
+                  <option value="ListTimeSlotsResp" />
+                  <option value="MakeAppointmentReq" />
+                  <option value="MakeAppointmentResp" />
+                  <option value="MedicinesInfo" />
+                  <option value="Patient" />
+                  <option value="PerformanceDetail" />
+                  <option value="PrescriptionInfo" />
+                  <option value="PrescriptionItem" />
+                  <option value="RankingInfo" />
+                  <option value="ReviewPrescriptionReq" />
+                  <option value="ReviewPrescriptionResp" />
+                  <option value="SelectMedicinesReq" />
+                  <option value="SelectMedicinesResp" />
+                  <option value="TimeSlot" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/model/mysql/mysqlInit.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752224692077" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752146020209" />
+              <option name="schema">
+                <list>
+                  <option value="HisCareHistory" />
+                  <option value="HisCareOrder" />
+                  <option value="HisCareOrderItem" />
+                  <option value="HisCheckResult" />
+                  <option value="HisOrderBackfee" />
+                  <option value="HisOrderBackfeeItem" />
+                  <option value="HisOrderCharge" />
+                  <option value="HisOrderChargeItem" />
+                  <option value="HisPatient" />
+                  <option value="HisPatientFile" />
+                  <option value="HisRegistration" />
+                  <option value="HisScheduling" />
+                  <option value="HisVerificationCode" />
+                  <option value="StockInventoryLog" />
+                  <option value="StockMedicines" />
+                  <option value="StockProducer" />
+                  <option value="StockProvider" />
+                  <option value="StockPurchase" />
+                  <option value="StockPurchaseItem" />
+                  <option value="SysNotice" />
+                  <option value="SysOperLog" />
+                  <option value="SysRegisteredItem" />
+                  <option value="SysRole" />
+                  <option value="SysRoleMenu" />
+                  <option value="SysRoleUser" />
+                  <option value="SysSmsLog" />
+                  <option value="SysUser" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/api/model/redis/redis.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752224692084" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/doctor_srv/configs/config.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752111414357" />
+              <option name="lastModified" value="1752221426177" />
               <option name="schema">
                 <list>
                   <option value="Config" />
@@ -745,7 +1571,7 @@
         <entry key="file://$PROJECT_DIR$/doctor_srv/doctor/doctor.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752151135553" />
+              <option name="lastModified" value="1752206712270" />
               <option name="schema">
                 <list>
                   <option value="CreatePrescriptionReq" />
@@ -772,6 +1598,15 @@
                   <option value="GetCareHistoryListResp" />
                   <option value="GetCareHistoryDetailReq" />
                   <option value="GetCareHistoryDetailResp" />
+                  <option value="GetWeeklyRankingReq" />
+                  <option value="RankingInfo" />
+                  <option value="GetWeeklyRankingResp" />
+                  <option value="GenerateWeeklyRankingReq" />
+                  <option value="GenerateWeeklyRankingResp" />
+                  <option value="GetDoctorPerformanceReq" />
+                  <option value="PerformanceDetail" />
+                  <option value="DoctorPerformanceInfo" />
+                  <option value="GetDoctorPerformanceResp" />
                   <option value="x" />
                 </list>
               </option>
@@ -781,7 +1616,7 @@
         <entry key="file://$PROJECT_DIR$/doctor_srv/doctor/doctor_grpc.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752151135554" />
+              <option name="lastModified" value="1752206712271" />
               <option name="schema">
                 <list>
                   <option value="doctorServiceClient" />
@@ -794,7 +1629,7 @@
         <entry key="file://$PROJECT_DIR$/doctor_srv/doctorservice/doctorservice.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752151135586" />
+              <option name="lastModified" value="1752206712320" />
               <option name="schema">
                 <list>
                   <option value="defaultDoctorService" />
@@ -839,6 +1674,18 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/generateweeklyrankinglogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752206712305" />
+              <option name="schema">
+                <list>
+                  <option value="GenerateWeeklyRankingLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/getcarehistorydetaillogic.go">
           <value>
             <ScannedPath>
@@ -858,6 +1705,18 @@
               <option name="schema">
                 <list>
                   <option value="GetCareHistoryListLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/getdoctorperformancelogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752206712307" />
+              <option name="schema">
+                <list>
+                  <option value="GetDoctorPerformanceLogic" />
                 </list>
               </option>
             </ScannedPath>
@@ -890,7 +1749,7 @@
         <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/getprescriptiondetaillogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752208067927" />
+              <option name="lastModified" value="1752287689038" />
               <option name="schema">
                 <list>
                   <option value="GetPrescriptionDetailLogic" />
@@ -911,6 +1770,30 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/getweeklyrankinglogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752206712304" />
+              <option name="schema">
+                <list>
+                  <option value="GetWeeklyRankingLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/performancecalculatorlogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752208154684" />
+              <option name="schema">
+                <list>
+                  <option value="PerformanceCalculatorLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/reviewprescriptionlogic.go">
           <value>
             <ScannedPath>
@@ -918,6 +1801,18 @@
               <option name="schema">
                 <list>
                   <option value="ReviewPrescriptionLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/schedulertasklogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752208154685" />
+              <option name="schema">
+                <list>
+                  <option value="SchedulerTaskLogic" />
                 </list>
               </option>
             </ScannedPath>
@@ -938,14 +1833,26 @@
         <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/utils.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752134520379" />
+              <option name="lastModified" value="1752208154686" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/weeklyrankinglogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752208154687" />
+              <option name="schema">
+                <list>
+                  <option value="WeeklyRankingLogic" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/doctor_srv/internal/server/doctorserviceserver.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752151135581" />
+              <option name="lastModified" value="1752206712311" />
               <option name="schema">
                 <list>
                   <option value="DoctorServiceServer" />
@@ -957,7 +1864,7 @@
         <entry key="file://$PROJECT_DIR$/doctor_srv/internal/svc/servicecontext.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752130296703" />
+              <option name="lastModified" value="1752202896928" />
               <option name="schema">
                 <list>
                   <option value="ServiceContext" />
@@ -976,7 +1883,7 @@
         <entry key="file://$PROJECT_DIR$/doctor_srv/model/mysql/sxt_his.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752069497123" />
+              <option name="lastModified" value="1752200598358" />
               <option name="schema">
                 <list>
                   <option value="HisCareHistory" />
@@ -1006,6 +1913,10 @@
                   <option value="SysRoleUser" />
                   <option value="SysSmsLog" />
                   <option value="SysUser" />
+                  <option value="HisPatientPayment" />
+                  <option value="HisPerformanceRule" />
+                  <option value="HisPerformanceDetail" />
+                  <option value="HisWeeklyRanking" />
                 </list>
               </option>
             </ScannedPath>
@@ -1033,7 +1944,7 @@
         <entry key="file://$PROJECT_DIR$/patient_srv/configs/config.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752146020186" />
+              <option name="lastModified" value="1752220314963" />
               <option name="schema">
                 <list>
                   <option value="Config" />
@@ -1108,7 +2019,7 @@
         <entry key="file://$PROJECT_DIR$/patient_srv/internal/logic/listtimeslotslogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752195938538" />
+              <option name="lastModified" value="1752215671418" />
               <option name="schema">
                 <list>
                   <option value="ListTimeSlotsLogic" />
@@ -1121,7 +2032,7 @@
         <entry key="file://$PROJECT_DIR$/patient_srv/internal/logic/makeappointmentlogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752215491437" />
+              <option name="lastModified" value="1752244119149" />
               <option name="schema">
                 <list>
                   <option value="MakeAppointmentLogic" />
@@ -1274,7 +2185,9 @@
         <entry key="alipay_factory" value="AlipayFactory" />
         <entry key="appointment" value="Appointment" />
         <entry key="cancel_appointment_logic" value="CancelAppointmentLogic" />
+        <entry key="cancel_appointment_req" value="CancelAppointmentReq" />
         <entry key="cancel_appointment_request" value="CancelAppointmentRequest" />
+        <entry key="cancel_appointment_resp" value="CancelAppointmentResp" />
         <entry key="cancel_appointment_response" value="CancelAppointmentResponse" />
         <entry key="care_history_info" value="CareHistoryInfo" />
         <entry key="config" value="Config" />
@@ -1288,10 +2201,16 @@
         <entry key="default_medical_service" value="defaultMedicalService" />
         <entry key="department" value="Department" />
         <entry key="doctor" value="Doctor" />
+        <entry key="doctor_performance_info" value="DoctorPerformanceInfo" />
         <entry key="doctor_service_client" value="doctorServiceClient" />
         <entry key="doctor_service_server" value="DoctorServiceServer" />
+        <entry key="generate_weekly_ranking_logic" value="GenerateWeeklyRankingLogic" />
+        <entry key="generate_weekly_ranking_req" value="GenerateWeeklyRankingReq" />
+        <entry key="generate_weekly_ranking_resp" value="GenerateWeeklyRankingResp" />
         <entry key="get_appointment_logic" value="GetAppointmentLogic" />
+        <entry key="get_appointment_req" value="GetAppointmentReq" />
         <entry key="get_appointment_request" value="GetAppointmentRequest" />
+        <entry key="get_appointment_resp" value="GetAppointmentResp" />
         <entry key="get_appointment_response" value="GetAppointmentResponse" />
         <entry key="get_care_history_detail_logic" value="GetCareHistoryDetailLogic" />
         <entry key="get_care_history_detail_req" value="GetCareHistoryDetailReq" />
@@ -1299,6 +2218,9 @@
         <entry key="get_care_history_list_logic" value="GetCareHistoryListLogic" />
         <entry key="get_care_history_list_req" value="GetCareHistoryListReq" />
         <entry key="get_care_history_list_resp" value="GetCareHistoryListResp" />
+        <entry key="get_doctor_performance_logic" value="GetDoctorPerformanceLogic" />
+        <entry key="get_doctor_performance_req" value="GetDoctorPerformanceReq" />
+        <entry key="get_doctor_performance_resp" value="GetDoctorPerformanceResp" />
         <entry key="get_medicines_detail_logic" value="GetMedicinesDetailLogic" />
         <entry key="get_medicines_detail_req" value="GetMedicinesDetailReq" />
         <entry key="get_medicines_detail_resp" value="GetMedicinesDetailResp" />
@@ -1311,6 +2233,9 @@
         <entry key="get_prescription_list_logic" value="GetPrescriptionListLogic" />
         <entry key="get_prescription_list_req" value="GetPrescriptionListReq" />
         <entry key="get_prescription_list_resp" value="GetPrescriptionListResp" />
+        <entry key="get_weekly_ranking_logic" value="GetWeeklyRankingLogic" />
+        <entry key="get_weekly_ranking_req" value="GetWeeklyRankingReq" />
+        <entry key="get_weekly_ranking_resp" value="GetWeeklyRankingResp" />
         <entry key="his_care_history" value="HisCareHistory" />
         <entry key="his_care_order" value="HisCareOrder" />
         <entry key="his_care_order_item" value="HisCareOrderItem" />
@@ -1321,31 +2246,47 @@
         <entry key="his_order_charge_item" value="HisOrderChargeItem" />
         <entry key="his_patient" value="HisPatient" />
         <entry key="his_patient_file" value="HisPatientFile" />
+        <entry key="his_patient_payment" value="HisPatientPayment" />
+        <entry key="his_performance_detail" value="HisPerformanceDetail" />
+        <entry key="his_performance_rule" value="HisPerformanceRule" />
         <entry key="his_registration" value="HisRegistration" />
         <entry key="his_scheduling" value="HisScheduling" />
         <entry key="his_verification_code" value="HisVerificationCode" />
+        <entry key="his_weekly_ranking" value="HisWeeklyRanking" />
         <entry key="list_departments_logic" value="ListDepartmentsLogic" />
+        <entry key="list_departments_req" value="ListDepartmentsReq" />
         <entry key="list_departments_request" value="ListDepartmentsRequest" />
+        <entry key="list_departments_resp" value="ListDepartmentsResp" />
         <entry key="list_departments_response" value="ListDepartmentsResponse" />
         <entry key="list_doctors_logic" value="ListDoctorsLogic" />
+        <entry key="list_doctors_req" value="ListDoctorsReq" />
         <entry key="list_doctors_request" value="ListDoctorsRequest" />
+        <entry key="list_doctors_resp" value="ListDoctorsResp" />
         <entry key="list_doctors_response" value="ListDoctorsResponse" />
         <entry key="list_time_slots_logic" value="ListTimeSlotsLogic" />
+        <entry key="list_time_slots_req" value="ListTimeSlotsReq" />
         <entry key="list_time_slots_request" value="ListTimeSlotsRequest" />
+        <entry key="list_time_slots_resp" value="ListTimeSlotsResp" />
         <entry key="list_time_slots_response" value="ListTimeSlotsResponse" />
         <entry key="make_appointment_logic" value="MakeAppointmentLogic" />
+        <entry key="make_appointment_req" value="MakeAppointmentReq" />
         <entry key="make_appointment_request" value="MakeAppointmentRequest" />
+        <entry key="make_appointment_resp" value="MakeAppointmentResp" />
         <entry key="make_appointment_response" value="MakeAppointmentResponse" />
         <entry key="medical_service_client" value="medicalServiceClient" />
         <entry key="medical_service_server" value="MedicalServiceServer" />
         <entry key="medicines_info" value="MedicinesInfo" />
         <entry key="nacos" value="Nacos" />
         <entry key="patient" value="Patient" />
+        <entry key="performance_calculator_logic" value="PerformanceCalculatorLogic" />
+        <entry key="performance_detail" value="PerformanceDetail" />
         <entry key="prescription_info" value="PrescriptionInfo" />
         <entry key="prescription_item" value="PrescriptionItem" />
+        <entry key="ranking_info" value="RankingInfo" />
         <entry key="review_prescription_logic" value="ReviewPrescriptionLogic" />
         <entry key="review_prescription_req" value="ReviewPrescriptionReq" />
         <entry key="review_prescription_resp" value="ReviewPrescriptionResp" />
+        <entry key="scheduler_task_logic" value="SchedulerTaskLogic" />
         <entry key="select_medicines_logic" value="SelectMedicinesLogic" />
         <entry key="select_medicines_req" value="SelectMedicinesReq" />
         <entry key="select_medicines_resp" value="SelectMedicinesResp" />
@@ -1367,9 +2308,10 @@
         <entry key="time_slot" value="TimeSlot" />
         <entry key="unimplemented_doctor_service_server" value="UnimplementedDoctorServiceServer" />
         <entry key="unimplemented_medical_service_server" value="UnimplementedMedicalServiceServer" />
+        <entry key="weekly_ranking_logic" value="WeeklyRankingLogic" />
         <entry key="x" value="x" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1752113825327" />
+    <option name="lastTimeChecked" value="1752281962044" />
   </component>
 </project>

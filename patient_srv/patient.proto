@@ -95,7 +95,7 @@ message GetAppointmentResponse {
 
 // 取消预约
 message CancelAppointmentRequest {
-  int32 appointment_id = 1;
+  string appointment_id = 1;
 }
 message CancelAppointmentResponse {
   bool success = 1;

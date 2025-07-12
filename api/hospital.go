@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/qas491/hospital/api/configs"
+	"github.com/qas491/hospital/api/model/mysql"
 
 	"github.com/qas491/hospital/api/internal/config"
 	"github.com/qas491/hospital/api/internal/handler"
@@ -16,7 +18,8 @@ var configFile = flag.String("f", "etc/hospital.yaml", "the config file")
 
 func main() {
 	flag.Parse()
-
+	configs.Init()
+	mysql.MysqlInit()
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
 

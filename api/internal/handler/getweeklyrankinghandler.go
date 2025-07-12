@@ -3,9 +3,9 @@ package handler
 import (
 	"net/http"
 
-	"hospital/api/internal/logic"
-	"hospital/api/internal/svc"
-	"hospital/api/internal/types"
+	"github.com/qas491/hospital/api/internal/logic"
+	"github.com/qas491/hospital/api/internal/svc"
+	"github.com/qas491/hospital/api/internal/types"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 )
