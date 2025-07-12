@@ -60,7 +60,7 @@ func (l *GetPrescriptionDetailLogic) GetPrescriptionDetail(in *doctor.GetPrescri
 	// 生成支付宝支付URL
 	factory := until.NewAlipayFactory(configs.WiseConfig.Alipay.AppId, configs.WiseConfig.Alipay.Key, false)
 	payURL, err := factory.Pay(
-		"处方支付",                    // subject
+		"处方支付",                        // subject
 		order.CoID,                    // outTradeNo
 		FormatAmount(order.AllAmount), // totalAmount
 		"http://your_notify_url",      // notifyURL
