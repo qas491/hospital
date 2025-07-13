@@ -7,10 +7,6 @@ import (
 
 type Config struct {
 	rest.RestConf
-	Auth struct {
-		AccessSecret string
-		AccessExpire int64
-	}
 	DoctorRpcConf  zrpc.RpcClientConf
 	PatientRpcConf zrpc.RpcClientConf
 }

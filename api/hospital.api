@@ -9,457 +9,524 @@ info (
 )
 
 // ========== 公共类型 ==========
+// 科室信息
 type Department {
-	id          int    `json:"id"`
-	name        string `json:"name"`
-	description string `json:"description"`
+	id          int    `json:"id"`          // 科室ID
+	name        string `json:"name"`        // 科室名称
+	description string `json:"description"` // 科室描述
 }
 
+// 医生信息
 type Doctor {
-	id            int32  `json:"id"`
-	name          string `json:"name"`
-	department_id int32  `json:"department_id"`
-	title         string `json:"title"`
-	profile       string `json:"profile"`
+	id            int32  `json:"id"`            // 医生ID
+	name          string `json:"name"`          // 医生姓名
+	department_id int32  `json:"department_id"` // 所属科室ID
+	title         string `json:"title"`         // 职称
+	profile       string `json:"profile"`       // 医生简介
 }
 
+// 时间段信息
 type TimeSlot {
-	id         int32  `json:"id"`
-	doctor_id  int32  `json:"doctor_id"`
-	date       string `json:"date"`
-	start_time string `json:"start_time"`
-	end_time   string `json:"end_time"`
-	available  int32  `json:"available"`
+	id         int32  `json:"id"`         // 时间段ID
+	doctor_id  int32  `json:"doctor_id"`  // 医生ID
+	date       string `json:"date"`       // 日期
+	start_time string `json:"start_time"` // 开始时间
+	end_time   string `json:"end_time"`   // 结束时间
+	available  int32  `json:"available"`  // 可预约数量
 }
 
+// 预约信息
 type Appointment {
-	id            int32  `json:"id"`
-	patient_id    int32  `json:"patient_id"`
-	doctor_id     int32  `json:"doctor_id"`
-	department_id int32  `json:"department_id"`
-	timeslot_id   int32  `json:"timeslot_id"`
-	status        string `json:"status"`
-	created_at    string `json:"created_at"`
+	id            int32  `json:"id"`            // 预约ID
+	patient_id    int32  `json:"patient_id"`    // 患者ID
+	doctor_id     int32  `json:"doctor_id"`     // 医生ID
+	department_id int32  `json:"department_id"` // 科室ID
+	timeslot_id   int32  `json:"timeslot_id"`   // 时间段ID
+	status        string `json:"status"`        // 预约状态
+	created_at    string `json:"created_at"`    // 创建时间
 }
 
+// 患者信息
 type Patient {
-	id      int32  `json:"id"`
-	name    string `json:"name"`
-	gender  string `json:"gender"`
-	phone   string `json:"phone"`
-	id_card string `json:"id_card"`
+	id      int32  `json:"id"`      // 患者ID
+	name    string `json:"name"`    // 患者姓名
+	gender  string `json:"gender"`  // 性别
+	phone   string `json:"phone"`   // 联系电话
+	id_card string `json:"id_card"` // 身份证号
 }
 
 // ========== 预约相关 ==========
+// 获取科室列表请求（无需参数）
 type ListDepartmentsReq {}
 
+// 获取科室列表响应
 type ListDepartmentsResp {
-	code        int64        `json:"code"` // 状态码
-	message     string       `json:"message"` // 提示信息
+	code        int64        `json:"code"`        // 状态码
+	message     string       `json:"message"`     // 提示信息
 	departments []Department `json:"departments"` // 科室列表
 }
 
+// 获取医生列表请求
 type ListDoctorsReq {
-	department_id int32 `json:"department_id"`
+	department_id int32 `json:"department_id"` // 科室ID
 }
 
+// 获取医生列表响应
 type ListDoctorsResp {
-	code    int64    `json:"code"` // 状态码
-	message string   `json:"message"` // 提示信息
-	doctors []Doctor `json:"doctors"` // 医生列表
+	code    int64    `json:"code"`    // 状态码
+	message string   `json:"message"`  // 提示信息
+	doctors []Doctor `json:"doctors"`  // 医生列表
 }
 
+// 获取时间段列表请求
 type ListTimeSlotsReq {
-	date string `json:"date"` // 查询日期
+	date string `json:"date"` // 查询日期，格式：YYYY-MM-DD
 }
 
+// 获取时间段列表响应
 type ListTimeSlotsResp {
-	code      int64      `json:"code"` // 状态码
-	message   string     `json:"message"` // 提示信息
+	code      int64      `json:"code"`      // 状态码
+	message   string     `json:"message"`   // 提示信息
 	timeslots []TimeSlot `json:"timeslots"` // 时间段列表
 }
 
+// 预约挂号请求
 type MakeAppointmentReq {
-	patient_id    int32 `json:"patient_id"`
-	doctor_id     int32 `json:"doctor_id"`
-	department_id int32 `json:"department_id"`
-	timeslot_id   int32 `json:"timeslot_id"`
+	patient_id    int32 `json:"patient_id"`    // 患者ID
+	doctor_id     int32 `json:"doctor_id"`     // 医生ID
+	department_id int32 `json:"department_id"` // 科室ID
+	timeslot_id   int32 `json:"timeslot_id"`   // 时间段ID
 }
 
+// 预约挂号响应
 type MakeAppointmentResp {
-	code        int64       `json:"code"` // 状态码
-	message     string      `json:"message"` // 提示信息
+	code        int64       `json:"code"`        // 状态码
+	message     string      `json:"message"`     // 提示信息
 	appointment Appointment `json:"appointment"` // 预约信息
 }
 
+// 获取预约详情请求
 type GetAppointmentReq {
-	appointment_id int32 `json:"appointment_id"`
+	appointment_id int32 `json:"appointment_id"` // 预约ID
 }
 
+// 获取预约详情响应
 type GetAppointmentResp {
-	code        int64       `json:"code"` // 状态码
-	message     string      `json:"message"` // 提示信息
+	code        int64       `json:"code"`        // 状态码
+	message     string      `json:"message"`     // 提示信息
 	appointment Appointment `json:"appointment"` // 预约信息
 }
 
+// 取消预约请求
 type CancelAppointmentReq {
-	appointment_id int32 `json:"appointment_id"`
+	appointment_id int32 `json:"appointment_id"` // 预约ID
 }
 
+// 取消预约响应
 type CancelAppointmentResp {
-	code    int64  `json:"code"` // 状态码
-	message string `json:"message"` // 提示信息
-	success bool   `json:"success"` // 是否成功
+	code    int64  `json:"code"`    // 状态码
+	message string `json:"message"`  // 提示信息
+	success bool   `json:"success"`  // 是否成功
 }
 
 // ========== 医生端-病例、处方、药品相关 ==========
 // 这里只列举部分主要类型，详细可根据 doctor.proto 继续补充
+
 // ========== 处方相关 ==========
+// 处方项目信息
 type PrescriptionItem {
-	item_id     string  `json:"item_id"` // 项目ID
-	item_ref_id string  `json:"item_ref_id"` // 引用ID
-	item_name   string  `json:"item_name"` // 项目名称
-	item_type   string  `json:"item_type"` // 项目类型
-	num         float64 `json:"num"` // 数量
-	price       float64 `json:"price"` // 单价
-	amount      float64 `json:"amount"` // 金额
-	remark      string  `json:"remark"` // 备注
-	status      string  `json:"status"` // 状态
+	item_id     string  `json:"item_id"`     // 项目ID
+	item_ref_id string  `json:"item_ref_id"` // 引用ID（药品ID等）
+	item_name   string  `json:"item_name"`   // 项目名称
+	item_type   string  `json:"item_type"`   // 项目类型（medicine:药品, check:检查等）
+	num         float64 `json:"num"`         // 数量
+	price       float64 `json:"price"`       // 单价
+	amount      float64 `json:"amount"`      // 金额
+	remark      string  `json:"remark"`      // 备注（用法用量等）
+	status      string  `json:"status"`      // 状态（active:有效, inactive:无效）
 }
 
+// 创建处方请求
 type CreatePrescriptionReq {
-	co_id        string             `json:"co_id"` // 处方ID
-	co_type      string             `json:"co_type"` // 处方类型
-	user_id      int64              `json:"user_id"` // 医生ID
-	patient_id   string             `json:"patient_id"` // 患者ID
+	co_id        string             `json:"co_id"`        // 处方ID（系统生成）
+	co_type      string             `json:"co_type"`      // 处方类型（prescription:处方, check:检查等）
+	user_id      int64              `json:"user_id"`      // 医生ID
+	patient_id   string             `json:"patient_id"`   // 患者ID
 	patient_name string             `json:"patient_name"` // 患者姓名
-	ch_id        string             `json:"ch_id"` // 病例ID
-	all_amount   float64            `json:"all_amount"` // 总金额
-	create_by    string             `json:"create_by"` // 创建人
-	items        []PrescriptionItem `json:"items"` // 处方项目列表
+	ch_id        string             `json:"ch_id"`        // 病例ID
+	all_amount   float64            `json:"all_amount"`   // 总金额
+	create_by    string             `json:"create_by"`    // 创建人（医生工号）
+	items        []PrescriptionItem `json:"items"`        // 处方项目列表
 }
 
+// 创建处方响应
 type CreatePrescriptionResp {
-	code    int64  `json:"code"` // 状态码
-	message string `json:"message"` // 提示信息
-	co_id   string `json:"co_id"` // 处方ID
+	code    int64  `json:"code"`    // 状态码
+	message string `json:"message"`  // 提示信息
+	co_id   string `json:"co_id"`   // 处方ID
 }
 
+// 审核处方请求
 type ReviewPrescriptionReq {
-	co_id         string `json:"co_id"` // 处方ID
-	review_status string `json:"review_status"` // 审核状态
-	review_by     string `json:"review_by"` // 审核人
+	co_id         string `json:"co_id"`         // 处方ID
+	review_status string `json:"review_status"` // 审核状态（approved:通过, rejected:拒绝）
+	review_by     string `json:"review_by"`     // 审核人（审核医生工号）
 	review_remark string `json:"review_remark"` // 审核备注
 }
 
+// 审核处方响应
 type ReviewPrescriptionResp {
-	code    int64  `json:"code"` // 状态码
-	message string `json:"message"` // 提示信息
-	success bool   `json:"success"` // 是否成功
+	code    int64  `json:"code"`    // 状态码
+	message string `json:"message"`  // 提示信息
+	success bool   `json:"success"`  // 是否成功
 }
 
+// 获取处方列表请求
 type GetPrescriptionListReq {
-	page         int64  `json:"page"` // 页码
-	page_size    int64  `json:"page_size"` // 每页数量
-	patient_id   string `json:"patient_id"` // 患者ID
-	patient_name string `json:"patient_name"` // 患者姓名
-	user_id      int64  `json:"user_id"` // 医生ID
-	co_type      string `json:"co_type"` // 处方类型
-	status       string `json:"status"` // 状态
-	start_time   string `json:"start_time"` // 开始时间
-	end_time     string `json:"end_time"` // 结束时间
+	page         int64  `json:"page"`         // 页码（从1开始）
+	page_size    int64  `json:"page_size"`    // 每页数量
+	patient_id   string `json:"patient_id"`   // 患者ID（可选）
+	patient_name string `json:"patient_name"` // 患者姓名（可选）
+	user_id      int64  `json:"user_id"`      // 医生ID（可选）
+	co_type      string `json:"co_type"`      // 处方类型（可选）
+	status       string `json:"status"`       // 状态（可选）
+	start_time   string `json:"start_time"`   // 开始时间（可选，格式：YYYY-MM-DD）
+	end_time     string `json:"end_time"`     // 结束时间（可选，格式：YYYY-MM-DD）
 }
 
+// 处方详细信息
 type PrescriptionInfo {
-	co_id        string             `json:"co_id"` // 处方ID
-	co_type      string             `json:"co_type"` // 处方类型
-	user_id      int64              `json:"user_id"` // 医生ID
-	patient_id   string             `json:"patient_id"` // 患者ID
+	co_id        string             `json:"co_id"`        // 处方ID
+	co_type      string             `json:"co_type"`      // 处方类型
+	user_id      int64              `json:"user_id"`      // 医生ID
+	patient_id   string             `json:"patient_id"`   // 患者ID
 	patient_name string             `json:"patient_name"` // 患者姓名
-	ch_id        string             `json:"ch_id"` // 病例ID
-	all_amount   float64            `json:"all_amount"` // 总金额
-	create_by    string             `json:"create_by"` // 创建人
-	create_time  string             `json:"create_time"` // 创建时间
-	update_by    string             `json:"update_by"` // 更新人
-	update_time  string             `json:"update_time"` // 更新时间
-	items        []PrescriptionItem `json:"items"` // 处方项目列表
+	ch_id        string             `json:"ch_id"`        // 病例ID
+	all_amount   float64            `json:"all_amount"`   // 总金额
+	create_by    string             `json:"create_by"`    // 创建人
+	create_time  string             `json:"create_time"`  // 创建时间
+	update_by    string             `json:"update_by"`    // 更新人
+	update_time  string             `json:"update_time"`  // 更新时间
+	items        []PrescriptionItem `json:"items"`        // 处方项目列表
 }
 
+// 获取处方列表响应
 type GetPrescriptionListResp {
-	code    int64              `json:"code"` // 状态码
+	code    int64              `json:"code"`    // 状态码
 	message string             `json:"message"` // 提示信息
-	list    []PrescriptionInfo `json:"list"` // 处方列表
-	total   int64              `json:"total"` // 总数
+	list    []PrescriptionInfo `json:"list"`   // 处方列表
+	total   int64              `json:"total"`  // 总数
 }
 
+// 获取处方详情请求
 type GetPrescriptionDetailReq {
 	co_id string `json:"co_id"` // 处方ID
 }
 
+// 获取处方详情响应
 type GetPrescriptionDetailResp {
-	code    int64            `json:"code"` // 状态码
+	code    int64            `json:"code"`    // 状态码
 	message string           `json:"message"` // 提示信息
 	detail  PrescriptionInfo `json:"detail"` // 处方详情
-	qrcode  string           `json:"qrcode"` // 处方二维码
+	qrcode  string           `json:"qrcode"` // 处方二维码（Base64编码）
 }
 
 // ========== 药品相关 ==========
+// 选择药品请求
 type SelectMedicinesReq {
-	medicines_id      string  `json:"medicines_id"` // 药品ID
-	medicines_name    string  `json:"medicines_name"` // 药品名称
-	medicines_type    string  `json:"medicines_type"` // 药品类型
+	medicines_id      string  `json:"medicines_id"`      // 药品ID
+	medicines_name    string  `json:"medicines_name"`    // 药品名称
+	medicines_type    string  `json:"medicines_type"`    // 药品类型
 	prescription_type string  `json:"prescription_type"` // 处方类型
-	num               float64 `json:"num"` // 数量
-	unit              string  `json:"unit"` // 单位
+	num               float64 `json:"num"`               // 数量
+	unit              string  `json:"unit"`              // 单位
 }
 
+// 选择药品响应
 type SelectMedicinesResp {
-	code      int64         `json:"code"` // 状态码
-	message   string        `json:"message"` // 提示信息
+	code      int64         `json:"code"`      // 状态码
+	message   string        `json:"message"`   // 提示信息
 	medicines MedicinesInfo `json:"medicines"` // 药品信息
 }
 
+// 药品详细信息
 type MedicinesInfo {
-	medicines_id               uint64  `json:"medicines_id"` // 药品ID
-	medicines_number           string  `json:"medicines_number"` // 药品编号
-	medicines_name             string  `json:"medicines_name"` // 药品名称
-	medicines_type             string  `json:"medicines_type"` // 药品类型
-	prescription_type          string  `json:"prescription_type"` // 处方类型
-	prescription_price         float64 `json:"prescription_price"` // 处方价格
-	unit                       string  `json:"unit"` // 单位
-	conversion                 int32   `json:"conversion"` // 换算
-	keywords                   string  `json:"keywords"` // 关键词
-	producter_id               string  `json:"producter_id"` // 生产厂家ID
-	status                     string  `json:"status"` // 状态
-	medicines_stock_num        float64 `json:"medicines_stock_num"` // 库存数量
+	medicines_id               uint64  `json:"medicines_id"`               // 药品ID
+	medicines_number           string  `json:"medicines_number"`           // 药品编号
+	medicines_name             string  `json:"medicines_name"`             // 药品名称
+	medicines_type             string  `json:"medicines_type"`             // 药品类型
+	prescription_type          string  `json:"prescription_type"`          // 处方类型
+	prescription_price         float64 `json:"prescription_price"`         // 处方价格
+	unit                       string  `json:"unit"`                       // 单位
+	conversion                 int32   `json:"conversion"`                 // 换算
+	keywords                   string  `json:"keywords"`                   // 关键词
+	producter_id               string  `json:"producter_id"`               // 生产厂家ID
+	status                     string  `json:"status"`                     // 状态
+	medicines_stock_num        float64 `json:"medicines_stock_num"`        // 库存数量
 	medicines_stock_danger_num float64 `json:"medicines_stock_danger_num"` // 危险库存数量
-	create_time                string  `json:"create_time"` // 创建时间
-	update_time                string  `json:"update_time"` // 更新时间
-	create_by                  string  `json:"create_by"` // 创建人
-	update_by                  string  `json:"update_by"` // 更新人
-	del_flag                   string  `json:"del_flag"` // 删除标志
+	create_time                string  `json:"create_time"`                // 创建时间
+	update_time                string  `json:"update_time"`                // 更新时间
+	create_by                  string  `json:"create_by"`                  // 创建人
+	update_by                  string  `json:"update_by"`                  // 更新人
+	del_flag                   string  `json:"del_flag"`                   // 删除标志
 }
 
+// 获取药品列表请求
 type GetMedicinesListReq {
-	page              int64  `json:"page"` // 页码
-	page_size         int64  `json:"page_size"` // 每页数量
-	medicines_name    string `json:"medicines_name"` // 药品名称
-	medicines_type    string `json:"medicines_type"` // 药品类型
-	prescription_type string `json:"prescription_type"` // 处方类型
-	status            string `json:"status"` // 状态
-	keywords          string `json:"keywords"` // 关键词
+	page              int64  `json:"page"`              // 页码（从1开始）
+	page_size         int64  `json:"page_size"`         // 每页数量
+	medicines_name    string `json:"medicines_name"`    // 药品名称（可选）
+	medicines_type    string `json:"medicines_type"`    // 药品类型（可选）
+	prescription_type string `json:"prescription_type"` // 处方类型（可选）
+	status            string `json:"status"`            // 状态（可选）
+	keywords          string `json:"keywords"`          // 关键词（可选）
 }
 
+// 获取药品列表响应
 type GetMedicinesListResp {
-	code    int64           `json:"code"` // 状态码
+	code    int64           `json:"code"`    // 状态码
 	message string          `json:"message"` // 提示信息
-	list    []MedicinesInfo `json:"list"` // 药品列表
-	total   int64           `json:"total"` // 总数
+	list    []MedicinesInfo `json:"list"`   // 药品列表
+	total   int64           `json:"total"`  // 总数
 }
 
+// 获取药品详情请求
 type GetMedicinesDetailReq {
 	medicines_id uint64 `json:"medicines_id"` // 药品ID
 }
 
+// 获取药品详情响应
 type GetMedicinesDetailResp {
-	code    int64         `json:"code"` // 状态码
+	code    int64         `json:"code"`    // 状态码
 	message string        `json:"message"` // 提示信息
-	detail  MedicinesInfo `json:"detail"` // 药品详情
+	detail  MedicinesInfo `json:"detail"`  // 药品详情
 }
 
 // ========== 病例相关 ==========
+// 创建病例请求
 type CreateCareHistoryReq {
-	ch_id         string `json:"ch_id"` // 病例ID
-	user_id       int64  `json:"user_id"` // 医生ID
-	user_name     string `json:"user_name"` // 医生姓名
-	patient_id    string `json:"patient_id"` // 患者ID
-	patient_name  string `json:"patient_name"` // 患者姓名
-	dept_id       int64  `json:"dept_id"` // 科室ID
-	dept_name     string `json:"dept_name"` // 科室名称
-	receive_type  string `json:"receive_type"` // 接诊类型
-	is_contagious string `json:"is_contagious"` // 是否传染病
-	case_date     string `json:"case_date"` // 病例日期
-	reg_id        string `json:"reg_id"` // 挂号ID
-	case_title    string `json:"case_title"` // 病例标题
-	case_result   string `json:"case_result"` // 病例结果
-	doctor_tips   string `json:"doctor_tips"` // 医生建议
-	remark        string `json:"remark"` // 备注
+	ch_id         string `json:"ch_id"`         // 病例ID（系统生成）
+	user_id       int64  `json:"user_id"`       // 医生ID
+	user_name     string `json:"user_name"`     // 医生姓名
+	patient_id    string `json:"patient_id"`    // 患者ID
+	patient_name  string `json:"patient_name"`  // 患者姓名
+	dept_id       int64  `json:"dept_id"`       // 科室ID
+	dept_name     string `json:"dept_name"`     // 科室名称
+	receive_type  string `json:"receive_type"`  // 接诊类型（门诊/急诊等）
+	is_contagious string `json:"is_contagious"` // 是否传染病（是/否）
+	case_date     string `json:"case_date"`     // 病例日期（YYYY-MM-DD）
+	reg_id        string `json:"reg_id"`        // 挂号ID
+	case_title    string `json:"case_title"`    // 病例标题
+	case_result   string `json:"case_result"`   // 病例结果
+	doctor_tips   string `json:"doctor_tips"`   // 医生建议
+	remark        string `json:"remark"`        // 备注
 }
 
+// 创建病例响应
 type CreateCareHistoryResp {
-	code    int64  `json:"code"` // 状态码
-	message string `json:"message"` // 提示信息
-	ch_id   string `json:"ch_id"` // 病例ID
+	code    int64  `json:"code"`    // 状态码
+	message string `json:"message"`  // 提示信息
+	ch_id   string `json:"ch_id"`   // 病例ID
 }
 
+// 获取病例列表请求
 type GetCareHistoryListReq {
-	page         int64  `json:"page"` // 页码
-	page_size    int64  `json:"page_size"` // 每页数量
-	patient_id   string `json:"patient_id"` // 患者ID
-	patient_name string `json:"patient_name"` // 患者姓名
-	user_id      int64  `json:"user_id"` // 医生ID
-	dept_id      string `json:"dept_id"` // 科室ID
-	case_date    string `json:"case_date"` // 病例日期
-	start_time   string `json:"start_time"` // 开始时间
-	end_time     string `json:"end_time"` // 结束时间
+	page         int64  `json:"page"`         // 页码（从1开始）
+	page_size    int64  `json:"page_size"`    // 每页数量
+	patient_id   string `json:"patient_id"`   // 患者ID（可选）
+	patient_name string `json:"patient_name"` // 患者姓名（可选）
+	user_id      int64  `json:"user_id"`      // 医生ID（可选）
+	dept_id      string `json:"dept_id"`      // 科室ID（可选）
+	case_date    string `json:"case_date"`    // 病例日期（可选，格式：YYYY-MM-DD）
+	start_time   string `json:"start_time"`   // 开始时间（可选，格式：YYYY-MM-DD）
+	end_time     string `json:"end_time"`     // 结束时间（可选，格式：YYYY-MM-DD）
 }
 
+// 病例详细信息
 type CareHistoryInfo {
-	ch_id         string `json:"ch_id"` // 病例ID
-	user_id       int64  `json:"user_id"` // 医生ID
-	user_name     string `json:"user_name"` // 医生姓名
-	patient_id    string `json:"patient_id"` // 患者ID
-	patient_name  string `json:"patient_name"` // 患者姓名
-	dept_id       int64  `json:"dept_id"` // 科室ID
-	dept_name     string `json:"dept_name"` // 科室名称
-	receive_type  string `json:"receive_type"` // 接诊类型
+	ch_id         string `json:"ch_id"`         // 病例ID
+	user_id       int64  `json:"user_id"`       // 医生ID
+	user_name     string `json:"user_name"`     // 医生姓名
+	patient_id    string `json:"patient_id"`    // 患者ID
+	patient_name  string `json:"patient_name"`  // 患者姓名
+	dept_id       int64  `json:"dept_id"`       // 科室ID
+	dept_name     string `json:"dept_name"`     // 科室名称
+	receive_type  string `json:"receive_type"`  // 接诊类型
 	is_contagious string `json:"is_contagious"` // 是否传染病
-	care_time     string `json:"care_time"` // 就诊时间
-	case_date     string `json:"case_date"` // 病例日期
-	reg_id        string `json:"reg_id"` // 挂号ID
-	case_title    string `json:"case_title"` // 病例标题
-	case_result   string `json:"case_result"` // 病例结果
-	doctor_tips   string `json:"doctor_tips"` // 医生建议
-	remark        string `json:"remark"` // 备注
+	care_time     string `json:"care_time"`     // 就诊时间
+	case_date     string `json:"case_date"`     // 病例日期
+	reg_id        string `json:"reg_id"`        // 挂号ID
+	case_title    string `json:"case_title"`    // 病例标题
+	case_result   string `json:"case_result"`   // 病例结果
+	doctor_tips   string `json:"doctor_tips"`   // 医生建议
+	remark        string `json:"remark"`        // 备注
 }
 
+// 获取病例列表响应
 type GetCareHistoryListResp {
-	code    int64             `json:"code"` // 状态码
+	code    int64             `json:"code"`    // 状态码
 	message string            `json:"message"` // 提示信息
-	list    []CareHistoryInfo `json:"list"` // 病例列表
-	total   int64             `json:"total"` // 总数
+	list    []CareHistoryInfo `json:"list"`   // 病例列表
+	total   int64             `json:"total"`  // 总数
 }
 
+// 获取病例详情请求
 type GetCareHistoryDetailReq {
 	ch_id string `json:"ch_id"` // 病例ID
 }
 
+// 获取病例详情响应
 type GetCareHistoryDetailResp {
-	code    int64           `json:"code"` // 状态码
+	code    int64           `json:"code"`    // 状态码
 	message string          `json:"message"` // 提示信息
-	detail  CareHistoryInfo `json:"detail"` // 病例详情
+	detail  CareHistoryInfo `json:"detail"`  // 病例详情
 }
 
 // ========== 排行榜相关 ==========
+// 获取周排行榜请求
 type GetWeeklyRankingReq {
 	limit int64 `json:"limit"` // 获取前N名，默认10
 }
 
+// 获取周排行榜响应
 type GetWeeklyRankingResp {
-	code       int64         `json:"code"` // 状态码
-	message    string        `json:"message"` // 提示信息
-	rankings   []RankingInfo `json:"rankings"` // 排行榜列表
+	code       int64         `json:"code"`       // 状态码
+	message    string        `json:"message"`    // 提示信息
+	rankings   []RankingInfo `json:"rankings"`   // 排行榜列表
 	week_start string        `json:"week_start"` // 周开始日期
-	week_end   string        `json:"week_end"` // 周结束日期
+	week_end   string        `json:"week_end"`   // 周结束日期
 }
 
+// 排行榜信息
 type RankingInfo {
-	rank               int64   `json:"rank"` // 排名
-	doctor_id          int64   `json:"doctor_id"` // 医生ID
-	doctor_name        string  `json:"doctor_name"` // 医生姓名
-	dept_name          string  `json:"dept_name"` // 科室名称
-	total_performance  float64 `json:"total_performance"` // 总业绩
+	rank               int64   `json:"rank"`               // 排名
+	doctor_id          int64   `json:"doctor_id"`          // 医生ID
+	doctor_name        string  `json:"doctor_name"`        // 医生姓名
+	dept_name          string  `json:"dept_name"`          // 科室名称
+	total_performance  float64 `json:"total_performance"`  // 总业绩
 	prescription_count int64   `json:"prescription_count"` // 处方数量
 }
 
+// 获取医生业绩请求
 type GetDoctorPerformanceReq {
-	doctor_id  int64  `json:"doctor_id"` // 医生ID
-	start_date string `json:"start_date"` // 开始日期
-	end_date   string `json:"end_date"` // 结束日期
+	doctor_id  int64  `json:"doctor_id"`  // 医生ID
+	start_date string `json:"start_date"`  // 开始日期（格式：YYYY-MM-DD）
+	end_date   string `json:"end_date"`    // 结束日期（格式：YYYY-MM-DD）
 }
 
+// 获取医生业绩响应
 type GetDoctorPerformanceResp {
-	code        int64                 `json:"code"` // 状态码
-	message     string                `json:"message"` // 提示信息
+	code        int64                 `json:"code"`        // 状态码
+	message     string                `json:"message"`     // 提示信息
 	performance DoctorPerformanceInfo `json:"performance"` // 业绩信息
 }
 
+// 医生业绩信息
 type DoctorPerformanceInfo {
-	doctor_id           int64               `json:"doctor_id"` // 医生ID
-	doctor_name         string              `json:"doctor_name"` // 医生姓名
-	dept_name           string              `json:"dept_name"` // 科室名称
-	total_performance   float64             `json:"total_performance"` // 总业绩
-	prescription_count  int64               `json:"prescription_count"` // 处方数量
-	payment_count       int64               `json:"payment_count"` // 缴费次数
+	doctor_id           int64               `json:"doctor_id"`           // 医生ID
+	doctor_name         string              `json:"doctor_name"`         // 医生姓名
+	dept_name           string              `json:"dept_name"`           // 科室名称
+	total_performance   float64             `json:"total_performance"`   // 总业绩
+	prescription_count  int64               `json:"prescription_count"`  // 处方数量
+	payment_count       int64               `json:"payment_count"`       // 缴费次数
 	performance_details []PerformanceDetail `json:"performance_details"` // 业绩明细
 }
 
+// 业绩明细信息
 type PerformanceDetail {
-	performance_id     string  `json:"performance_id"` // 业绩ID
-	co_id              string  `json:"co_id"` // 处方ID
-	payment_amount     float64 `json:"payment_amount"` // 缴费金额
+	performance_id     string  `json:"performance_id"`     // 业绩ID
+	co_id              string  `json:"co_id"`              // 处方ID
+	payment_amount     float64 `json:"payment_amount"`     // 缴费金额
 	performance_amount float64 `json:"performance_amount"` // 业绩金额
-	performance_rate   float64 `json:"performance_rate"` // 业绩比例
-	performance_date   string  `json:"performance_date"` // 业绩日期
+	performance_rate   float64 `json:"performance_rate"`   // 业绩比例
+	performance_date   string  `json:"performance_date"`   // 业绩日期
 }
 
 // ========== 路由与服务 ==========
+// 患者端接口组
 @server (
-	jwt:   Auth
 	group: patient
 )
 service hospital {
+	// 获取科室列表
 	@handler listDepartments
 	get /departments returns (ListDepartmentsResp)
 
+	// 获取指定科室的医生列表
 	@handler listDoctors
 	get /departments/:department_id/doctors returns (ListDoctorsResp)
 
+	// 获取医生可预约的时间段
 	@handler listTimeSlots
 	get /doctors/:doctor_id/timeslots (ListTimeSlotsReq) returns (ListTimeSlotsResp)
 
+	// 预约挂号
 	@handler makeAppointment
 	post /appointments (MakeAppointmentReq) returns (MakeAppointmentResp)
 
+	// 获取预约详情
 	@handler getAppointment
 	get /appointments/:appointment_id returns (GetAppointmentResp)
 
+	// 取消预约
 	@handler cancelAppointment
 	post /appointments/:appointment_id/cancel returns (CancelAppointmentResp)
 }
 
+// 医生端接口组
 @server (
-	jwt:   Auth
 	group: doctor
 )
 service hospital {
-	// 处方相关
+	// ========== 处方相关 ==========
+	// 创建处方
 	@handler createPrescription
 	post /prescriptions (CreatePrescriptionReq) returns (CreatePrescriptionResp)
 
+	// 审核处方
 	@handler reviewPrescription
 	post /prescriptions/:co_id/review (ReviewPrescriptionReq) returns (ReviewPrescriptionResp)
 
+	// 获取处方列表
 	@handler getPrescriptionList
 	get /prescriptions (GetPrescriptionListReq) returns (GetPrescriptionListResp)
 
+	// 获取处方详情
 	@handler getPrescriptionDetail
 	get /prescriptions/:co_id returns (GetPrescriptionDetailResp)
 
-	// 药品相关
+	// ========== 药品相关 ==========
+	// 选择药品
 	@handler selectMedicines
 	post /medicines/select (SelectMedicinesReq) returns (SelectMedicinesResp)
 
+	// 获取药品列表
 	@handler getMedicinesList
 	get /medicines (GetMedicinesListReq) returns (GetMedicinesListResp)
 
+	// 获取药品详情
 	@handler getMedicinesDetail
 	get /medicines/:medicines_id returns (GetMedicinesDetailResp)
 
-	// 病例相关
+	// ========== 病例相关 ==========
+	// 创建病例
 	@handler createCareHistory
 	post /care-history (CreateCareHistoryReq) returns (CreateCareHistoryResp)
 
+	// 获取病例列表
 	@handler getCareHistoryList
 	get /care-history (GetCareHistoryListReq) returns (GetCareHistoryListResp)
 
+	// 获取病例详情
 	@handler getCareHistoryDetail
 	get /care-history/:ch_id returns (GetCareHistoryDetailResp)
 
-	// 排行榜相关
+	// ========== 排行榜相关 ==========
+	// 获取周排行榜
 	@handler getWeeklyRanking
 	get /rankings/weekly (GetWeeklyRankingReq) returns (GetWeeklyRankingResp)
 
+	// 获取医生业绩
 	@handler getDoctorPerformance
 	get /doctors/:doctor_id/performance (GetDoctorPerformanceReq) returns (GetDoctorPerformanceResp)
 }

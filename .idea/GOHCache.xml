@@ -1506,7 +1506,7 @@
         <entry key="file://$PROJECT_DIR$/api/model/mysql/sxt_his.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752146020209" />
+              <option name="lastModified" value="1752291038771" />
               <option name="schema">
                 <list>
                   <option value="HisCareHistory" />
@@ -1749,7 +1749,7 @@
         <entry key="file://$PROJECT_DIR$/doctor_srv/internal/logic/getprescriptiondetaillogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752287689038" />
+              <option name="lastModified" value="1752291035886" />
               <option name="schema">
                 <list>
                   <option value="GetPrescriptionDetailLogic" />
@@ -2019,7 +2019,7 @@
         <entry key="file://$PROJECT_DIR$/patient_srv/internal/logic/listtimeslotslogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752215671418" />
+              <option name="lastModified" value="1752291050627" />
               <option name="schema">
                 <list>
                   <option value="ListTimeSlotsLogic" />
@@ -2312,6 +2312,6 @@
         <entry key="x" value="x" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1752281962044" />
+    <option name="lastTimeChecked" value="1752390106799" />
   </component>
 </project>
