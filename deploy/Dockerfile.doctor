@@ -1,0 +1,38 @@
+# 医生服务Dockerfile
+FROM golang:1.21-alpine AS builder
+
+# 设置工作目录
+WORKDIR /app
+
+# 复制go.mod和go.sum
+COPY go.work go.work.sum ./
+COPY doctor_srv/go.mod doctor_srv/go.sum ./doctor_srv/
+
+# 下载依赖
+RUN go work sync
+
+# 复制源代码
+COPY . .
+
+# 构建医生服务
+RUN cd doctor_srv && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o doctor-service .
+
+# 运行阶段
+FROM alpine:latest
+
+# 安装ca-certificates
+RUN apk --no-cache add ca-certificates
+
+WORKDIR /root/
+
+# 复制二进制文件
+COPY --from=builder /app/doctor_srv/doctor-service .
+
+# 复制配置文件
+COPY doctor_srv/etc/ ./etc/
+
+# 暴露端口
+EXPOSE 8080
+
+# 运行服务
+CMD ["./doctor-service", "-f", "etc/doctor.yaml"] 

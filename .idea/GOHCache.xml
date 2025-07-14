@@ -1048,7 +1048,7 @@
         <entry key="file://$PROJECT_DIR$/api/internal/config/config.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752224480074" />
+              <option name="lastModified" value="1752408891917" />
               <option name="schema">
                 <list>
                   <option value="Config" />
@@ -1193,14 +1193,14 @@
         <entry key="file://$PROJECT_DIR$/api/internal/handler/routes.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752241635581" />
+              <option name="lastModified" value="1752408726063" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/createcarehistorylogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752235013429" />
+              <option name="lastModified" value="1752414370350" />
               <option name="schema">
                 <list>
                   <option value="CreateCareHistoryLogic" />
@@ -1212,7 +1212,7 @@
         <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/createprescriptionlogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752227264392" />
+              <option name="lastModified" value="1752414447497" />
               <option name="schema">
                 <list>
                   <option value="CreatePrescriptionLogic" />
@@ -1224,7 +1224,7 @@
         <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getcarehistorydetaillogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752235079307" />
+              <option name="lastModified" value="1752414522427" />
               <option name="schema">
                 <list>
                   <option value="GetCareHistoryDetailLogic" />
@@ -1236,7 +1236,7 @@
         <entry key="file://$PROJECT_DIR$/api/internal/logic/doctor/getcarehistorylistlogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752235129359" />
+              <option name="lastModified" value="1752414611116" />
               <option name="schema">
                 <list>
                   <option value="GetCareHistoryListLogic" />
@@ -1344,7 +1344,7 @@
         <entry key="file://$PROJECT_DIR$/api/internal/logic/getweeklyrankinglogic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1752284279619" />
+              <option name="lastModified" value="1752414333040" />
               <option name="schema">
                 <list>
                   <option value="GetWeeklyRankingLogic" />
@@ -2175,6 +2175,13 @@
                   <option value="UnimplementedMedicalServiceServer" />
                 </list>
               </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/../../zhuangaoer/rk1/day4/api/api_test.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1752453602636" />
             </ScannedPath>
           </value>
         </entry>
